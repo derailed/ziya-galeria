@@ -1,0 +1,153 @@
+<%= chart :bar %>
+
+  <%=comp :axis_category %>
+    shadow:               low
+    size:                  14
+    alpha:                100
+    orientation:  vertical_up
+    color:             88bb77
+
+  <%=comp :axis_ticks %>
+    value_ticks:         false
+    minor_color:        222222
+    minor_count:             1
+    major_thickness:         2
+    major_color:        222222
+    position:         centered
+    category_ticks:       true
+    minor_thickness:         1
+
+  <%=comp :axis_value %>
+    alpha:    0
+    max:    100
+    min:      0
+
+  <%=comp :chart_border %>
+    top_thickness:          0
+    bottom_thickness:       0
+    left_thickness:         4
+    color:             000000
+    right_thickness:        0
+
+  <%=comp :chart_grid_h %>
+    alpha:           5
+    thickness:      30
+    color:      000000
+
+  <%=comp :chart_label %>
+    shadow:       low
+    alpha:         75
+    size:          12
+    color:     ffffff
+    position:  center
+    suffix:         %
+
+  <%=comp :chart_rect %>
+    shadow:            high
+    corner_tr:           30
+    x:                   50
+    positive_alpha:      65
+    corner_bl:            0
+    y:                  105
+    corner_tl:            0
+    height:             160
+    positive_color:  dba34c
+    negative_color:  ff0000
+    corner_br:           30
+    negative_alpha:      25
+    width:              320
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:     high
+          alpha:       100
+          size:        100
+          x:             2
+          y:            11
+          color:    77aa77
+          height:      240
+          h_align:    left
+          bevel:     small
+          width:       300
+          v_align:     top
+          text:     '  poll'
+      - <%= drawing :text %>
+          shadow:      low
+          alpha:       100
+          size:         20
+          x:            35
+          y:            65
+          color:    ff8800
+          height:      200
+          h_align:    left
+          width:       400
+          v_align:     top
+          text:     'Is the economy recovering?'
+      - <%= drawing :text %>
+          shadow:      low
+          alpha:        10
+          size:         25
+          x:             0
+          y:             0
+          height:      290
+          h_align:  center
+          width:       400
+          v_align:  bottom
+          text:     'poll poll poll poll poll poll poll poll poll poll poll'
+      - <%= drawing :text %>
+          shadow:      low
+          alpha:        10
+          size:         25
+          x:             0
+          y:             0
+          height:      290
+          h_align:  center
+          width:       400
+          v_align:     top
+          text:     'poll poll poll poll poll poll poll poll poll poll poll'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :bevel %>
+          blurY:             10
+          angle:             90
+          highlightAlpha:    10
+          type:            full
+          id:              data
+          shadowAlpha:       20
+          blurX:             10
+          distance:           5
+      - <%= filter_type :bevel %>
+          blurY:                2
+          angle:               45
+          highlightAlpha:      35
+          shadowColor:     000000
+          type:             inner
+          id:               small
+          highlightColor:  ffffff
+          shadowAlpha:         35
+          blurX:                2
+          distance:             1
+      - <%= filter_type :shadow %>
+          blurY:       15
+          angle:       45
+          alpha:       35
+          id:        high
+          distance:     5
+          blurX:       15
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       5
+
+  <%=comp :legend %>
+    layout:  hide
+
+  <%=comp :series_color %>
+    colors: 5a4b6e

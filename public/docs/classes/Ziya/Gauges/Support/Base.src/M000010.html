@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>to_comp_yaml (Ziya::Gauges::Support::Base)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ziya/gauges/support/base.rb, line 7</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_comp_yaml</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">indent_multiplier</span>=<span class="ruby-value">1</span> )
+      <span class="ruby-identifier">buff</span> = []
+      <span class="ruby-identifier">tab</span>  = <span class="ruby-identifier">indent</span>( <span class="ruby-identifier">indent_multiplier</span> )
+      <span class="ruby-identifier">buff</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{dial( demodulize( self.class.name ), name )}&quot;</span>
+      <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-constant">Omap</span>
+          <span class="ruby-identifier">buff</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{tab}#{indent}#{dials}&quot;</span>
+          <span class="ruby-identifier">v</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">comp</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">buff</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{tab}#{indent(2)}#{dial( demodulize(comp.class.name), name )}&quot;</span>
+            <span class="ruby-identifier">comp</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">each_pair</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">buff</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{tab}#{indent(4)}#{k}: #{v}&quot;</span>}
+          <span class="ruby-keyword kw">end</span>          
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">buff</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{tab}#{indent(1)}#{k}: #{v}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>[<span class="ruby-identifier">k</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    
+      <span class="ruby-comment cmt"># if ( self.respond_to? :dials )</span>
+      <span class="ruby-comment cmt">#   buff &lt;&lt; &quot;#{tab}dials:&quot;</span>
+      <span class="ruby-comment cmt">#   for dial in dials do</span>
+      <span class="ruby-comment cmt">#     buff &lt;&lt; &quot;#{tab}#{dial( demodulize( dial.class.name ) )}&quot;</span>
+      <span class="ruby-comment cmt">#     dial.options.each_pair { |k,v| buff &lt;&lt; &quot;#{tab}#{tab}#{k}: #{v}&quot;}</span>
+      <span class="ruby-comment cmt">#   end</span>
+      <span class="ruby-comment cmt"># end</span>
+      <span class="ruby-identifier">buff</span>.<span class="ruby-identifier">join</span>( <span class="ruby-value str">&quot;\n&quot;</span> )
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<%= chart :stacked_bar %>
+
+  <%=comp :axis_category %>
+    shadow:                 low
+    size:                    16
+    alpha:                   60
+    orientation:  vertical_down
+
+  <%=comp :axis_ticks %>
+    value_ticks:     false
+    category_ticks:   true
+
+  <%=comp :axis_value %>
+    shadow:     low
+    steps:        6
+    size:        10
+    alpha:       50
+    color:   ffffff
+
+  <%=comp :chart_border %>
+    shadow:            low
+    top_thickness:       0
+    bottom_thickness:    0
+    left_thickness:      5
+    right_thickness:     0
+
+  <%=comp :chart_grid_h %>
+    thickness:  0
+
+  <%=comp :chart_grid_v %>
+    alpha:           5
+    thickness:      20
+    color:      000000
+
+  <%=comp :chart_label %>
+    size:          12
+    alpha:        100
+    color:     ff8888
+    position:    hide
+
+  <%=comp :chart_guide %>
+    radius:                 4
+    background_color:       0
+    alpha:                 50
+    size:                  16
+    thickness:              1
+    fill_alpha:            75
+    prefix_v:               $
+    text_v_alpha:          80
+    vertical:            true
+    type:              dashed
+    text_color:        ff4400
+    color:             ffffff
+    fill_color:        FF4400
+    suffix_v:            mil 
+    line_thickness:         0
+
+  <%=comp :chart_rect %>
+    shadow:             low
+    corner_tr:           40
+    x:                   50
+    positive_alpha:      60
+    corner_bl:            0
+    y:                   50
+    corner_tl:            0
+    height:             200
+    positive_color:  ffffff
+    corner_br:           40
+    width:              320
+
+  <%=comp :chart_transition %>
+    delay:        0
+    order:      all
+    type:      drop
+    duration:     2
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:      low
+          alpha:        40
+          size:         41
+          x:             0
+          y:             0
+          color:    000022
+          height:      295
+          h_align:   right
+          width:       390
+          v_align:  bottom
+          text:     'regional report'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :bevel %>
+          blurY:               20
+          angle:               80
+          highlightAlpha:      40
+          shadowColor:     000000
+          type:             inner
+          id:                data
+          highlightColor:  ffffff
+          shadowAlpha:         35
+          blurX:                0
+          distance:             5
+      - <%= filter_type :shadow %>
+          blurY:       20
+          angle:       45
+          alpha:       30
+          id:        high
+          distance:     2
+          blurX:       20
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      35
+          id:        low
+          distance:    2
+          blurX:       5
+
+  <%=comp :legend %>
+    shadow:             low
+    size:                13
+    alpha:               65
+    x:                   48
+    fill_alpha:          10
+    bullet:          circle
+    y:                   15
+    margin:               5
+    height:               5
+    fill_color:      ffffff
+    color:           ffffff
+    line_thickness:       0
+    width:              300
+
+  <%=comp :series_color %>
+    colors: 303d3d,4c5e6f,784e3a

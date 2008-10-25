@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+  	<title>ZiYa Gem - G A L E R I A</title>
+  	<%= stylesheet_link_tag 'styles' %>
+  	<%= javascript_include_tag :defaults %>
+  </head>
+  <body id="body">
+  	<div id="header">
+  	  <div id="logo" style="float:left">
+  		  <%= link_to image_tag('ziya_logo.png', :border => 0), root_path -%>
+  	  </div>
+      <div id="docs" style="text-align:right;margin:10px 10px 20px 20px;">
+        <%= link_to "documentation", "/docs/index.html", :target => "#", :class => "docs" -%>
+      </div>  	  	  
+  	</div>
+    <div id="navigation" style="clear:left;">
+      <% count = 0; @charts.each_pair do |label, type| -%>
+         <%= link_to_remote label,
+            { :url      => self.send( "load_#{type}_url" ),
+              :before   => "show_selection('navigation', this);",
+              :complete => "" },
+              :id => type, :class => "nav manage #{type}#{count == 0 ? ' selected' : ''}" -%>
+      <% count += 1; end -%>
+    </div>
+  	<div id="main" style="clear:both">
+  	  <div id="title" style="display:none">
+    	  <h1 id="chart_type">lines</h1>
+    	</div>
+  	  <div id="workspace">
+  	    <center>
+    	    <%= yield %>
+    	  </center>
+  	  </div>
+  	</div>
+  	<div id="footer">
+  	  <div id="production">
+  	    Produced by <span id="co">LiquidRail LLC</span>
+  	  </div>
+  	</div>
+  </body>
+</html>

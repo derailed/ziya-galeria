@@ -1,0 +1,177 @@
+<%= chart :stacked_area %>
+
+  <%=comp :axis_category %>
+    shadow:              low
+    size:                 12
+    alpha:                75
+    margin:            false
+    orientation:  horizontal
+    color:            000000
+
+  <%=comp :axis_value %>
+    shadow:        low
+    steps:           6
+    size:           10
+    alpha:          60
+    decimals:        0
+    color:      ffffff
+    show_min:    false
+    suffix:          K
+
+  <%=comp :chart_border %>
+    top_thickness:          0
+    bottom_thickness:       2
+    left_thickness:         0
+    color:             000000
+    right_thickness:        0
+
+  <%=comp :chart_grid_h %>
+    alpha:          10
+    thickness:       1
+    color:      000000
+
+  <%=comp :chart_grid_v %>
+    alpha:          20
+    thickness:       1
+    type:       dashed
+    color:      000000
+
+  <%=comp :chart_label %>
+    background_color:  ff4400
+    alpha:                 90
+    size:                  12
+    color:             ffffff
+    position:          cursor
+    suffix:              ,000
+
+  <%=comp :chart_guide %>
+    radius:               7
+    alpha:               50
+    line_alpha:          90
+    thickness:            1
+    text_h_alpha:         0
+    horizontal:        true
+    type:            dashed
+    line_color:      ff4400
+    color:           ffffff
+    line_thickness:       3
+
+  <%=comp :chart_rect %>
+    corner_tr:           20
+    x:                   50
+    positive_alpha:      60
+    corner_bl:            0
+    y:                   75
+    corner_tl:           20
+    height:             150
+    positive_color:  8088aa
+    bevel:               bg
+    corner_br:            0
+    width:              320
+
+  <%=comp :chart_type %>
+
+  <%=comp :chart_transition %>
+    delay:            0
+    order:          all
+    type:      dissolve
+    duration:         1
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:           low
+          alpha:             15
+          size:              45
+          x:                -20
+          delay:              0
+          y:                -15
+          color:         000066
+          height:            50
+          duration:           1
+          transition:  dissolve
+          width:            200
+          text:        '  report'
+      - <%= drawing :text %>
+          shadow:          high
+          alpha:             35
+          rotation:          -2
+          size:              56
+          x:                  0
+          delay:              0
+          y:                 10
+          color:         ffffff
+          height:           150
+          duration:           1
+          transition:  dissolve
+          width:            400
+          text:        'stacked region'
+      - <%= drawing :text %>
+          shadow:             low
+          alpha:               10
+          size:               115
+          x:                  -90
+          delay:                0
+          y:                  190
+          color:           ffffff
+          height:             300
+          duration:             1
+          layer:       background
+          transition:    dissolve
+          width:              800
+          text:        '    report'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :bevel %>
+          blurY:             20
+          angle:             90
+          highlightAlpha:    20
+          type:            full
+          id:                bg
+          shadowAlpha:       25
+          blurX:             20
+          distance:           5
+      - <%= filter_type :bevel %>
+          blurY:             15
+          angle:             90
+          highlightAlpha:    20
+          type:            full
+          id:              data
+          shadowAlpha:       20
+          blurX:             20
+          distance:           5
+      - <%= filter_type :shadow %>
+          blurY:       15
+          angle:       45
+          alpha:       35
+          id:        high
+          distance:     5
+          blurX:       15
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       5
+
+  <%=comp :legend %>
+    shadow:               low
+    line_alpha:             0
+    size:                  12
+    alpha:                 75
+    x:                     68
+    fill_alpha:            10
+    bullet:            circle
+    delay:                  0
+    y:                     92
+    margin:                 5
+    height:                40
+    fill_color:        000000
+    color:             ffffff
+    duration:               1
+    line_thickness:         0
+    transition:      dissolve
+    width:                 10
+    layout:          vertical

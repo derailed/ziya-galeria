@@ -1,0 +1,192 @@
+<%= chart :line %>
+
+  <%=comp :axis_value %>
+    alpha:  0
+
+  <%=comp :axis_category %>
+    alpha:  0
+
+  <%=comp :axis_ticks %>
+    value_ticks:     false
+    category_ticks:  false
+
+  <%=comp :chart_border %>
+    top_thickness:     0
+    bottom_thickness:  0
+    left_thickness:    0
+    right_thickness:   0
+
+  <%=comp :chart_grid_h %>
+    alpha:  0
+
+  <%=comp :chart_grid_v %>
+    alpha:           5
+    thickness:       1
+    color:      000000
+
+  <%=comp :chart_pref %>
+    fill_shape:      false
+    point_shape:      none
+    line_thickness:      1
+
+  <%=comp :chart_rect %>
+    positive_alpha:    0
+    y:               184
+    height:           36
+
+  <%=comp :chart_transition %>
+    delay:         1
+    type:   dissolve
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :rect %>
+          x:                        0
+          delay:                    1
+          y:                        0
+          height:                 300
+          fill_color:          92a99f
+          bevel:                   bg
+          line_thickness:           0
+          transition:        dissolve
+          layer:           background
+          width:                  500
+          text:            '          '
+      - <%= drawing :circle %>
+          radius:                 100
+          line_alpha:              10
+          x:                       75
+          fill_alpha:               0
+          delay:                    1
+          y:                      225
+          shahow:                 low
+          line_color:          4c5e6f
+          line_thickness:          80
+          transition:        dissolve
+          layer:           background
+          text:            '          '
+      - <%= drawing :circle %>
+          radius:                 200
+          line_alpha:               8
+          x:                       75
+          fill_alpha:               0
+          delay:                    1
+          y:                      225
+          shahow:                 low
+          line_color:          4c5e6f
+          line_thickness:          60
+          transition:        dissolve
+          layer:           background
+          text:            '          '
+      - <%= drawing :circle %>
+          radius:                 300
+          line_alpha:               6
+          x:                       75
+          fill_alpha:               0
+          delay:                    1
+          y:                      225
+          shahow:                 low
+          line_color:          4c5e6f
+          line_thickness:          40
+          transition:        dissolve
+          layer:           background
+          text:            '          '
+      - <%= drawing :rect %>
+          shadow:                high
+          x:                     60.5
+          fill_alpha:             100
+          delay:                    1
+          y:                       60
+          height:                 160
+          fill_color:          92a99f
+          line_thickness:           0
+          transition:        dissolve
+          layer:           background
+          width:                  300
+          text:            '          '
+      - <%= drawing :rect %>
+          x:                     60.5
+          fill_alpha:              50
+          delay:                    1
+          y:                      160
+          height:                  60
+          fill_color:          ffeeff
+          line_thickness:           1
+          transition:        dissolve
+          layer:           background
+          width:                  300
+          text:            '          '
+      - <%= drawing :text %>
+          shadow:          high
+          alpha:             50
+          size:              58
+          x:                 57
+          delay:              1
+          y:                210
+          color:         ffffff
+          height:           300
+          transition:  dissolve
+          width:            320
+          text:        'production'
+      # - <%= drawing :image %>
+      #     url:         charts.swf?library_path=charts_library&xml_source=xml%2FGallery_Preview_2.xml
+      #     transition:                                                                       dissolve
+      #     text:        '                                                                             '
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       35
+          id:        high
+          distance:     5
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      35
+          id:        low
+          distance:    2
+          blurX:       5
+      - <%= filter_type :bevel %>
+          blurY:              100
+          inner:             true
+          angle:               90
+          highlightAlpha:      10
+          shadowColor:     4c5e6f
+          id:                  bg
+          highlightColor:  ffffff
+          shadowAlpha:         20
+          blurX:                0
+          distance:            25
+      - <%= filter_type :bevel %>
+          blurY:               30
+          inner:             true
+          angle:              -80
+          highlightAlpha:      50
+          shadowColor:     000088
+          id:                blue
+          highlightColor:  ffffff
+          shadowAlpha:         25
+          blurX:                0
+          distance:            20
+      - <%= filter_type :bevel %>
+          blurY:               30
+          inner:             true
+          angle:              -80
+          highlightAlpha:      25
+          shadowColor:     000000
+          id:                gray
+          highlightColor:  ffffff
+          shadowAlpha:         20
+          blurX:                0
+          distance:            20
+
+  <%=comp :legend %>
+    layout:  hide
+
+  <%=comp :series_color %>
+    colors: 7777dd,eeaa55

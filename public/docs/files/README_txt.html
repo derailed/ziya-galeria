@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Mon Aug 25 00:41:46 -0600 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+ziya
+</p>
+<pre>
+    by Fernand Galiana
+    ziya.rubyforge.org
+</pre>
+<h2>RELEASES</h2>
+<pre>
+  2.0.0 - Added support for XML/SWF 5.02
+  2.0.1 - Additional support for 5.02 + Added donut chart from 5.03
+  2.0.2 - Changed logging required to 0.9.X - Update to xml/swf 5.0.4
+  2.0.3 - README file update - Thanks to Paul James !
+</pre>
+<h2>DESCRIPTION:</h2>
+<p>
+ZiYa allows you to easily display graphs in your ruby based applications by
+leveraging SWF Charts (<a
+href="http://www.maani.us/xml_charts/index.php">www.maani.us/xml_charts/index.php</a>)
+and SWF gauges (<a
+href="http://www.maani.us/gauge/index.php">www.maani.us/gauge/index.php</a>).
+This gem bundles version 5.03 and 1.6 of these flash libraries.
+Incorporating flash graphs or gauge in your app relieves the server by
+allowing for delegating graph rendering to the client side. Using this gem,
+you will be able to easily create great looking charts for your
+application. You will also be able to use the charts or gauges has a
+navigation scheme by embedding various link in the graphical components
+thus bring to the table an ideal scheme for reporting and dashboard like
+applications. Your managers will love you for it !!
+</p>
+<pre>
+        Checkout the demo: http://ziya.liquidrail.com
+        Video            : http://www.youtube.com/watch?v=axIMmMHdXzo ( Out of date but you'll get the basics... )
+        Documentation    : http://ziya.rubyforge.org
+        Forum            : http://groups.google.com/group/ziya-plugin
+</pre>
+<h2>FEATURES:</h2>
+<ul>
+<li>Allows you to style your charts just like you would an html page using css
+styles philosophy. Each chart can be associated with a YAML file that
+allows you to specify preferences based on SWF Charts properties. Chart
+style sheet reside under public/charts/themes. By default all styling
+resides under the &#8216;default&#8217; directory. Each chart type may have
+an associated YAML file. You can either inherit the default styles or
+define your own by specifying an id when you create your graph. The styles
+will cascade thru your graph class hierarchy and override default
+preferences as you would in a style sheet.
+
+<p>
+NOTE: XML/SWF charts are free of charge unless you need to use special
+features such as embedded links and printing. The package cost $45 per
+domain and is well worth the investment. A similar fee applies to the gauge
+framework.
+</p>
+</li>
+<li>We are leveraging ERB within the YAML file to provide access to the
+chart/gauge state. State can be passed in via the options hash when the
+graph/gauge is generated. You can also define your own methods in
+helpers/ziya/xxx_helper. Where xxYou can access these helper methods in
+your style file just like you would in a rails template.
+
+</li>
+<li>Theme support. You can change the appearance and behavior of any charts by
+introducing new themes under the public/charts/themes directory.
+
+</li>
+</ul>
+<h2>SYNOPSIS:</h2>
+<pre>
+  IMPORTANT: This new gem version requires a client update to flash 9.0 and possibly you will
+  need to get a new license from XML/SWF ( $45.0 for your domain ), if you want to use
+  advanced features like links and live updates.
+  Also some api's have changed. I will try to push a new sample application and more docs in the
+  next few weeks. So make sure you try this out first in a non production environment and report
+  bugs or side effects. I'll do my best to keep up with the demand. If anyone would like to give
+  me a hand with a tutorial app or improving the docs, I am all hears...
+
+  When using within a rails application you will need to create a ziya.rb file in your
+  config/initializers directory ( Rails 2.0 )
+
+  ziya.rb:
+
+    # Pull in the ZiYa gem framework
+    gem &quot;ziya&quot;, &quot;~&gt; 2.0.0&quot;
+    require 'ziya'
+
+    # Initializes the ZiYa Framework
+    Ziya.initialize( :logger      =&gt; RAILS_DEFAULT_LOGGER,
+                     :helpers_dir =&gt; File.join( File.dirname(__FILE__), %w[.. .. app helpers ziya] ),
+                     :themes_dir  =&gt; File.join( File.dirname(__FILE__), %w[.. .. public charts themes]) )
+
+   This will initialize the gem. You can log the output to stdout as well using the ZiYa bundled logger
+   or specify a file ie File.join( File.dirname(__FILE__), %w[.. log ziya.log]. If you choose to use the
+   ZiYa logger, you can specify the :log_level option to either :warn :info :debug or :error.
+   You will need to indicate your themes directory typically located under public/charts/themes or any location
+   you'll choose. Otherwise ZiYa will used the default themes from &lt;&lt;the gem ie default or commando.
+   Lastly you can specify a custom helper directory :helpers_dir, so you can use helper methods within your
+   ZiYa stylesheets.
+
+   NOTE: You must create the app/helpers/ziya and public/chart/themes directory in your application
+</pre>
+<ul>
+<li>Creating a chart
+
+<p>
+blee_controller.rb
+</p>
+<pre>
+  class BleeController &lt; ApplicationController
+    helper Ziya::Helper
+
+    # Callback from the flash movie to get the chart's data
+    def load_chart
+      chart = Ziya::Charts::Bar.new
+      chart.add( :axis_category_text, %w[2006 2007 2008] )
+      chart.add( :series, &quot;Dogs&quot;, [10,20,30] )
+      chart.add( :series, &quot;Cats&quot;, [5,15,25] )
+      respond_to do |fmt|
+       fmt.xml =&gt; { render :xml =&gt; chart.to_xml }
+    end
+  end
+</pre>
+<p>
+blee/index.html.erb
+</p>
+<p>
+&lt;%= ziya_chart load_chart_url, :size =&gt; &quot;300x200&quot; -%&gt;
+</p>
+<p>
+config/route.rb
+</p>
+<p>
+# Creates a named route for the chart. map.load_chart
+&#8217;/blee/load_chart&#8217;, :controller =&gt; &#8216;blee&#8217;,
+:action =&gt; &#8216;load_chart&#8216;
+</p>
+</li>
+<li>Creating a gauge
+
+<p>
+You will need to modify the ziya initializer and add the following
+directive
+</p>
+<pre>
+  Ziya.initialize( :logger      =&gt; RAILS_DEFAULT_LOGGER,
+                 :helpers_dir =&gt; File.join( File.dirname(__FILE__), %w[.. .. app helpers ziya] ),
+                 :designs_dir =&gt; File.join( File.dirname(__FILE__), %w[.. .. public gauges designs] ), # =&gt; Add this !!
+                 :themes_dir  =&gt; File.join( File.dirname(__FILE__), %w[.. .. public charts themes]) )
+</pre>
+<p>
+fred_controller.rb
+</p>
+<pre>
+  class FredController &lt; ApplicationController
+    def load_gauge
+      gauge = Ziya::Gauges::Base.new( @license_key, 'my_gauge' )
+       respond_to do |fmt|
+        fmt.xml =&gt; { render :xml =&gt; gauge.to_xml }
+       end
+    end
+  end
+
+ fred/index.html.erb
+
+ &lt;%= ziya_gauge load_gauge_url, :size =&gt; &quot;300x200&quot; -%&gt;
+
+ config/route.rb
+
+ # Creates a named route for the chart.
+ map.load_gauge '/fred/load_gauge', :controller =&gt; 'fred', :action =&gt; 'load_gauge'
+</pre>
+<p>
+public/gauges/designs/my_gauge.yml
+</p>
+<p>
+In the design file you will leverage the components defined in the <a
+href="../classes/Ziya/Gauges/Support.html">Ziya::Gauges::Support</a>
+package to create your gauge desgins. You gauges can be animated using
+rotate, scale and move operations. In this example we will create a volume
+control that will rotate to the desired position. In real life you will
+fetch the volume level from your models to set the desired position. Take a
+look at the ZiYa sample application for the various possibilities. You can
+think of a gauge as a portable canvas element where you can draw you own
+designs using the various components provided ZiYa components ( No need to
+worry about various browsers&#8217; canvas support )
+</p>
+<pre>
+ &lt;%= gauge :base %&gt;
+    # specifies the number of ticks to draw in a circular fashion
+    &lt;%= dial :radial_ticks, :volume %&gt;
+        x:              100
+        y:               75
+        radius:          35
+        length:           4
+        start_angle:    235
+        end_angle:      485
+        ticks:           10
+        thickness:        2
+        color:       000000
+    # rotates the volume to the desired position.
+    &lt;%= dial :rotate, :volume_setting %&gt;
+        x:               100
+        y:                75
+        start:           300
+        span:            160
+        step:              5
+        skake_span:       20
+        shadow_alpha:     20
+        shadow_x_offset:   3
+        shadow_y_offset:   3
+        &lt;%= dials %&gt;
+          &lt;%= dial :circle, :circle_1 %&gt;
+              x:             100
+              y:              75
+              radius:         30
+              fill_color: 777777
+              line_thickness: 5
+              line_alpha:     75
+          &lt;%= dial :circle, :circle_2 %&gt;
+              x:          100
+              y:           55
+              radius:       5
+              fill_alpha:  80
+</pre>
+</li>
+</ul>
+<h2>REQUIREMENTS:</h2>
+<pre>
+  ZiYa depends on the logging gem version &gt; 0.9.0
+</pre>
+<h2>INSTALL:</h2>
+<pre>
+  sudo gem install ziya
+
+  cd to your application directory and issue the following command
+
+  &gt; ziyafy
+
+  This will copy the necessary themes and flash files to run ziya in your application
+  public/charts directory.
+</pre>
+<h2>LICENSE:</h2>
+<p>
+(The MIT License)
+</p>
+<p>
+Copyright (c) 2008 FIXME (different license?)
+</p>
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+&#8216;Software&#8217;), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+</p>
+<p>
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+</p>
+<p>
+THE SOFTWARE IS PROVIDED &#8216;AS IS&#8217;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

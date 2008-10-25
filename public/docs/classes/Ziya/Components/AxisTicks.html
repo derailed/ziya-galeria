@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Ziya::Components::AxisTicks</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Ziya::Components::AxisTicks</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/ziya/components/axis_ticks_rb.html">
+                lib/ziya/components/axis_ticks.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Base
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Sets the tick marks on the chart axes.
+</p>
+<p>
+<tt>value_ticks</tt>: A boolean value that indicates whether the ticks on
+the value axis are visible or not.
+</p>
+<pre>
+                            The default is false.
+</pre>
+<p>
+<tt>category_ticks</tt>: A boolean value that indicates whether the ticks
+on the category axis are visible or not.
+</p>
+<pre>
+                            The default is true.
+</pre>
+<p>
+<tt>position</tt>: A string that determines where on the axis to display
+the ticks. Valid values are &quot;outside&quot;,
+</p>
+<pre>
+                            &quot;inside&quot;, and &quot;centered&quot;.
+                            The default is &quot;outside&quot;.
+</pre>
+<p>
+<tt>major_thickness</tt>: The thickness of major ticks. Major ticks are
+those appearing with the axis labels.
+</p>
+<pre>
+                            The default is 2 pixels.
+</pre>
+<p>
+<tt>major_color</tt>: The color of major ticks. This must be a string
+holding triple hexadecimal values representing
+</p>
+<pre>
+                            the red, green, and blue components for a color.
+                            The default is &quot;000000&quot; (black).
+</pre>
+<p>
+<tt>minor_thickness</tt>: The thickness of minor ticks. Minor ticks are
+those appearing between major ticks.
+</p>
+<pre>
+                            The default is 1 pixel.
+</pre>
+<p>
+<tt>minor_color</tt>: The color of minor ticks. This must be a string
+holding triple hexadecimal values representing
+</p>
+<pre>
+                            the red, green, and blue components for a color.
+                            The default is &quot;000000&quot; (black).
+</pre>
+<p>
+<tt>minor_count</tt>: This applies to the value axis only. It sets the
+number of minor ticks between every 2 major ticks.
+</p>
+<pre>
+                            The default is 4. The category axis displays minor ticks only where its labels get skipped.
+</pre>
+<p>
+See <a
+href="http://www.maani.us/xml_charts/index.php?menu=Reference&submenu=axis_ticks">www.maani.us/xml_charts/index.php?menu=Reference&submenu=axis_ticks</a>
+for additional documentation, examples and futher detail.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

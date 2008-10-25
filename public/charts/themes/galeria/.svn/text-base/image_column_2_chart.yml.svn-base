@@ -1,0 +1,140 @@
+<%= chart :image_column %>
+
+  <%=comp :axis_category %>
+    shadow:     low
+    size:        10
+    color:   ffffff
+
+  <%=comp :axis_value %>
+    shadow:  low
+    prefix:    $
+    size:     10
+    alpha:    60
+    max:      40
+    suffix:    k
+
+  <%=comp :chart_border %>
+    top_thickness:     0
+    bottom_thickness:  2
+    left_thickness:    0
+    right_thickness:   0
+
+  <%=comp :chart_grid_h %>
+    alpha:          35
+    thickness:       1
+    type:       dashed
+    color:      ffffff
+
+  <%=comp :chart_rect %>
+    x:                  150
+    positive_alpha:     100
+    y:                   30
+    height:             230
+    positive_color:  bccdcb
+    bevel:               bg
+    width:              150
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:      high
+          rotation:     -90
+          size:          39
+          x:            300
+          y:            263
+          color:     eeeeaa
+          height:       300
+          width:        300
+          text:      'Earning Gap'
+      - <%= drawing :text %>
+          shadow:       low
+          alpha:         85
+          rotation:     -90
+          size:          21
+          x:            343
+          y:            263
+          color:     566069
+          height:        40
+          width:        300
+          text:      'between men women'
+      - <%= drawing :text %>
+          rotation:     -90
+          alpha:         25
+          size:         100
+          x:            -14
+          y:            306
+          color:     96a5aa
+          height:       200
+          width:        400
+          text:      '||||||||||||||||||||||||||||||||||'
+      - <%= drawing :circle %>
+          shadow:        hole
+          radius:          15
+          line_alpha:       0
+          x:               50
+          fill_alpha:     100
+          y:               50
+          fill_color:  ffffff
+          text:        '      '
+      - <%= drawing :circle %>
+          shadow:        hole
+          radius:          15
+          line_alpha:       0
+          x:               50
+          fill_alpha:     100
+          y:              250
+          fill_color:  ffffff
+          text:        '      '
+      - <%= drawing :rect %>
+          x:          150
+          y:           30
+          height:     230
+          bevel:   ground
+          width:      150
+          text:    '      '
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       35
+          id:        high
+          distance:     5
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      35
+          id:        low
+          distance:    2
+          blurX:       5
+      - <%= filter_type :shadow %>
+          blurY:        8
+          inner:     true
+          angle:       45
+          alpha:       75
+          id:        hole
+          distance:     3
+          blurX:        8
+      - <%= filter_type :bevel %>
+          blurY:               50
+          angle:               90
+          highlightAlpha:      20
+          type:             inner
+          id:              ground
+          shadowAlpha:         35
+          knockout:          true
+          distance:             3
+          blurX:                0
+      - <%= filter_type :bevel %>
+          blurY:              60
+          angle:              45
+          highlightAlpha:     40
+          type:            outer
+          id:                 bg
+          shadowAlpha:        15
+          blurX:              60
+          distance:           10

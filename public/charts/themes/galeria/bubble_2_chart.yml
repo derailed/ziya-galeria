@@ -1,0 +1,237 @@
+<%= chart :bubble %>
+
+  <%=comp :axis_category %>
+    shadow:            low
+    prefix:              $
+    size:               13
+    alpha:              75
+    max:                 4
+    orientation:  circular
+    decimals:            2
+    min:                 2
+    color:          000000
+
+  <%=comp :axis_ticks %>
+    value_ticks:     false
+    category_ticks:  false
+
+  <%=comp :axis_value %>
+    shadow:    shadow2
+    prefix:          $
+    alpha:         100
+    max:           120
+    min:             0
+    color:      ffffff
+    show_min:    false
+    suffix:          K
+
+  <%=comp :axis_value_label %>
+
+  <%=comp :chart_border %>
+    top_thickness:     1
+    bottom_thickness:  2
+    left_thickness:    0
+    color:             0
+    right_thickness:   0
+
+  <%=comp :chart_grid_h %>
+    alpha:          50
+    thickness:       1
+    type:       dashed
+    color:      aaaaff
+
+  <%=comp :chart_grid_v %>
+    alpha:          15
+    thickness:      40
+    type:        solid
+    color:      aaaaff
+
+  <%=comp :chart_label %>
+    prefix:                   $
+    background_color:    ff4400
+    size:                    12
+    alpha:                   75
+    color:               000000
+    position:            cursor
+    suffix:             million
+
+  <%=comp :chart_rect %>
+    corner_tr:           30
+    x:                   75
+    positive_alpha:     100
+    corner_bl:           30
+    y:                   50
+    glow:             glow1
+    corner_tl:           30
+    height:             175
+    positive_color:  eeffff
+    bevel:           bevel2
+    corner_br:           30
+    width:              290
+
+  <%=comp :chart_transition %>
+    delay:       .5
+    order:      all
+    type:      drop
+    duration:     2
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :rect %>
+          x:                     -100
+          y:                        0
+          height:                 300
+          fill_color:          aaaaff
+          bevel:                   bg
+          line_thickness:           0
+          layer:           background
+          width:                  500
+          text:            '          '
+      - <%= drawing :text %>
+          shadow:        high
+          alpha:           50
+          size:           108
+          x:              -101
+          y:              -43
+          color:       ffffff
+          height:         200
+          layer:   background
+          width:          500
+          text:    '   revenue'
+      - <%= drawing :text %>
+          shadow:        high
+          alpha:           40
+          size:           108
+          x:             -101
+          y:               17
+          color:       ffffff
+          height:         200
+          layer:   background
+          width:          500
+          text:    '   erevenu'
+      - <%= drawing :text %>
+          shadow:        high
+          alpha:           30
+          size:           108
+          x:             -101
+          y:               77
+          color:       ffffff
+          height:         200
+          layer:   background
+          width:          500
+          text:    '   uereven'
+      - <%= drawing :text %>
+          shadow:        high
+          alpha:           20
+          size:           108
+          x:             -101
+          y:              137
+          color:       ffffff
+          height:         200
+          layer:   background
+          width:          500
+          text:    '   nuereve'
+      - <%= drawing :text %>
+          shadow:        high
+          alpha:           10
+          size:           108
+          x:             -101
+          y:              197
+          color:       ffffff
+          height:         200
+          layer:   background
+          width:          500
+          text:    '   enuerev'
+      - <%= drawing :text %>
+          shadow:      low
+          alpha:        65
+          size:         64
+          x:             0
+          y:           220
+          color:    110044
+          height:       50
+          h_align:   right
+          width:       398
+          text:     ' price'
+      - <%= drawing :text %>
+          shadow:       low
+          alpha:         65
+          rotation:     -90
+          size:          25
+          x:             15
+          delay:        1.3
+          y:            230
+          color:     110066
+          height:        50
+          duration:     0.7
+          width:        300
+          text:      'promotion'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :bevel %>
+          blurY:             200
+          angle:              45
+          highlightAlpha:     75
+          type:            inner
+          id:                 bg
+          shadowAlpha:        20
+          blurX:             200
+          distance:           20
+      - <%= filter_type :bevel %>
+          blurY:               30
+          angle:               45
+          highlightAlpha:      30
+          type:              full
+          id:              bevel1
+          shadowAlpha:         35
+          blurX:               30
+          distance:            10
+      - <%= filter_type :bevel %>
+          blurY:               30
+          angle:               45
+          highlightAlpha:      20
+          type:              full
+          id:              bevel2
+          shadowAlpha:         15
+          blurX:               30
+          distance:            10
+      - <%= filter_type :glow %>
+          blurY:        50
+          inner:     false
+          alpha:       100
+          id:        glow1
+          color:    ee88ff
+          quality:       2
+          blurX:        50
+      - <%= filter_type :shadow %>
+          blurY:       20
+          angle:       45
+          alpha:       35
+          id:        high
+          distance:     5
+          blurX:       20
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       5
+
+  <%=comp :legend %>
+    shadow:         low
+    size:            10
+    alpha:           90
+    x:               75
+    fill_alpha:      10
+    y:               30
+    margin:           5
+    height:          20
+    color:       ffffff
+    width:          290
+
+  <%=comp :series_color %>
+    colors: 4e62dd,ff8811,4d4d4d,ffdd33

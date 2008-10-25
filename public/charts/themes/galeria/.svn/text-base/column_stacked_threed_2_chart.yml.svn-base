@@ -1,0 +1,98 @@
+<%= chart :stacked_threed_column %>
+
+  <%=comp :axis_category %>
+    shadow:     low
+    size:        10
+    alpha:       75
+    color:   FFFFFF
+
+  <%=comp :axis_ticks %>
+    value_ticks:     true
+    minor_count:        1
+    category_ticks:  true
+
+  <%=comp :axis_value %>
+    shadow:     low
+    size:        10
+    alpha:       75
+    color:   FFFFFF
+
+  <%=comp :chart_border %>
+    top_thickness:     0
+    bottom_thickness:  2
+    left_thickness:    2
+    right_thickness:   0
+
+  <%=comp :chart_grid_h %>
+    thickness:      1
+    type:       solid
+
+  <%=comp :chart_grid_v %>
+    thickness:      1
+    type:       solid
+
+  <%=comp :chart_label %>
+    background_color:  444488
+    alpha:                100
+    size:                  12
+    color:             ffffcc
+    position:          cursor
+
+  <%=comp :chart_rect %>
+    x:                   60
+    positive_alpha:      50
+    y:                   60
+    height:             150
+    positive_color:  888888
+    width:              300
+
+  <%=comp :chart_pref %>
+    min_x:        0
+    max_x:       80
+    min_y:        0
+    max_y:       60
+    rotation_x:  15
+    rotation_y:   0
+
+  <%=comp :chart_type %>
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       15
+          angle:       45
+          alpha:       35
+          id:        high
+          distance:     5
+          blurX:       15
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       5
+
+  <%=comp :legend %>
+    shadow:                high
+    line_alpha:               0
+    size:                    12
+    alpha:                   50
+    x:                       25
+    fill_alpha:               7
+    y:                      250
+    margin:                  20
+    line_color:          000000
+    height:                  50
+    fill_color:          000000
+    color:               000000
+    line_thickness:           0
+    width:                  350
+    layout:          horizontal
+
+  <%=comp :series_color %>
+    colors: ff6600,88ff00,8866ff
+
+  <%=comp :series %>
+    set_gap:  20
+    bar_gap:   0

@@ -1,0 +1,147 @@
+<%= chart :donut %>
+
+  <%=comp :chart_label %>
+    shadow:            low
+    as_percentage:    true
+    alpha:              95
+    size:               10
+    color:          ffffff
+    position:       inside
+
+  <%=comp :chart_pref %>
+    select:  true
+
+  <%=comp :chart_rect %>
+    x:        50
+    y:        85
+    height:  175
+    width:   300
+
+  <%=comp :chart_transition %>
+    delay:          0.5
+    order:     category
+    type:         scale
+    duration:       0.2
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :rect %>
+          line_alpha:              25
+          corner_tr:               40
+          x:                       40
+          fill_alpha:               0
+          corner_bl:               40
+          y:                      100
+          line_color:          ffffff
+          corner_tl:               40
+          height:                 150
+          corner_br:               40
+          line_thickness:          40
+          transition:        dissolve
+          layer:           background
+          width:                  320
+          text:            '          '
+      - <%= drawing :circle %>
+          radius:                 150
+          x:                      200
+          fill_alpha:             100
+          y:                      150
+          fill_color:          ccddff
+          blur:                 blur1
+          bevel:                   bg
+          line_thickness:           0
+          transition:        dissolve
+          layer:           background
+          text:            '          '
+      - <%= drawing :rect %>
+          shadow:            soft
+          corner_tr:           10
+          x:                   40
+          fill_alpha:          90
+          corner_bl:           10
+          y:                   10
+          corner_tl:           10
+          height:              35
+          fill_color:      ddeeff
+          corner_br:           10
+          transition:    dissolve
+          layer:       background
+          width:              320
+          text:        '          '
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      40
+          id:        low
+          color:       0
+          distance:    2
+          blurX:       5
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       40
+          id:        high
+          color:        0
+          distance:     5
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:        5
+          angle:       45
+          alpha:       20
+          id:        soft
+          color:        0
+          distance:     2
+          blurX:        5
+      - <%= filter_type :bevel %>
+          blurY:               5
+          angle:              45
+          highlightAlpha:     15
+          type:            inner
+          id:               data
+          shadowAlpha:        25
+          blurX:               5
+          distance:            3
+      - <%= filter_type :bevel %>
+          blurY:               50
+          angle:               45
+          highlightAlpha:      35
+          shadowColor:     0000ff
+          type:              full
+          id:                  bg
+          shadowAlpha:         25
+          blurX:               50
+          distance:            10
+      - <%= filter_type :blur %>
+          blurY:       75
+          id:       blur1
+          quality:      1
+          blurX:       75
+
+  <%=comp :context_menu %>
+    full_screen:  false
+
+  <%=comp :legend %>
+    line_alpha:         0
+    size:              12
+    alpha:            100
+    x:                 50
+    fill_alpha:         0
+    bullet:        circle
+    color:         ffffff
+    bevel:            low
+    transition:  dissolve
+    width:            300
+
+  <%=comp :series_color %>
+    colors: 88aaff,88dd11,4e62dd,ff8811,4d4d4d
+
+  <%=comp :series_explode %>
+    numbers: 0, 0, 0, 25, 0
+
+  <%=comp :series %>
+    transfer:  true

@@ -1,0 +1,215 @@
+# -----------------------------------------------------------------------------
+# Compass Gauge - an example of embedded erb code
+# -----------------------------------------------------------------------------
+<%= gauge :base %>
+  <%= dial :text, :compass_bg_text %>
+      x:            5
+      y:           10
+      width:      450
+      size:        85
+      alpha:        5
+      rotation:    -3
+      color:   ffffff
+      align:   left
+      text:    northern\rexposure\r========
+  
+  <%= dial :rect, :compass_rect %>
+      x:             330
+      y:              50
+      height:        200    
+      width:          50    
+      fill_alpha:     15
+      fill_color: 00AAff
+  
+# animate grid
+<% 2.times do |i| %>
+<% level = 3 + rand( 16 ) %>
+  <%= dial :scale, "compass_grid_anim_#{i}" %>
+     x: 0
+     y: 250
+     start_scale: 0
+     end_scale:   <%=level*5%>
+     direction:   vertical
+     step:               5
+     shake_snap:         5
+     shake_frequency:  100
+     shake_span:        20
+     shadow_alpha:       0
+     <%= dials %>
+       <%= dial :rect, :level %>
+           x:          <%=330+i*25%>
+           y:          50
+           width:      25
+           height:     200
+           fill_color: 00aaff
+           fill_alpha: 90
+           line_alpha:  0
+<% end %>
+
+# generates the grid lines
+<% 21.times do |i| %>
+  <%= dial :line, "compass_h_line_#{i}".to_sym %>
+      x1: 330
+      y1: <%=50+10*i%>
+      x2: 380
+      y2: <%=50+10*i%>
+      color: 444444
+<% end %>
+
+<% 3.times do |i| %>
+  <%= dial :line, "compass_v_line_#{i}".to_sym %>
+      x1: <%=330+25*i%>
+      y1: 50
+      x2: <%=330+25*i%>
+      y2: 250
+      color: 444444
+<% end %>
+
+  <%= dial :move, :compass_activity %>
+      start_x_offset:   0
+      start_y_offset:   0
+      end_x_offset:   200
+      end_y_offset:   -10
+      step:            20
+      shake_frequency: 95
+      shake_span:     100
+      <%= dials %> 
+        <%= dial :line, :level %>
+            x1:            70
+            y1:           100
+            y2:            98
+            x2:           120
+            alpha:         75
+            thickness:      8
+            color:     88ff00
+  
+  <%= dial :circle, :compass_bg %>
+      x:                 190
+      y:                 160
+      radius:            120
+      line_alpha:         30
+      fill_alpha:         50
+      fill_color:     444444
+      line_thickness:     10
+  
+  <%= dial :rotate, :compass_ticks %>
+      step: 1
+      x: 200
+      y: 150
+      start: 0
+      shake_frequency: 90
+      shake_span: 5
+      shadow_alpha: 0
+      span: -45
+      <%= dials %> 
+        <%= dial :radial_ticks, :ticks %>
+            x:             200
+            y:             150 
+            radius:         93
+            length:          6
+            start_angle:     0
+            end_angle:     350
+            ticks:          36
+            thickness:       3
+            color:      000000
+        <%= dial :radial_numbers, :numbers %>
+            x:             200
+            y:             150 
+            radius:         90
+            start_num:       0
+            end_num:       330
+            start_angle:    30
+            end_angle:     360
+            ticks:          12
+            size:           12
+            font:        arial
+            bold:         true
+            width:          50
+            height:         50
+            align:        left
+            color:      ffffff
+      
+  <%= dial :rotate, :compass_movement %>
+      x:               200
+      y:               150
+      step:              3
+      start:          -110
+      span:            100    
+      shake_frequency:  95
+      shake_span:       45
+      shadow_alpha:     20
+      <%= dials %>
+        <%= dial :polygon, :compass_direction %>
+            line_alpha: 0
+            fill_alpha: 100
+            fill_color: ff4400
+            <%= dials %> 
+              <%= dial :point, :pt1 %>
+                  x: 200
+                  y: 75
+              <%= dial :point, :pt2 %>
+                  x: 210
+                  y: 85
+              <%= dial :point, :pt3 %>
+                  x: 190
+                  y: 85
+        <%= dial :rect, :needle_direction_north %>
+            x:             198
+            y:             110
+            height:         40
+            width:           4        
+            line_alpha:      0
+            fill_alpha:     90
+            fill_color: ff4400        
+        <%= dial :rect, :needle_direction_east_west %>
+            x:             150
+            y:             149
+            height:          2
+            width:         100
+            line_alpha:      0         
+            fill_alpha:     90
+            fill_color: ffffff
+        <%= dial :circle, :zz %>
+            x:                 200
+            y:                 150
+            radius:             20
+            line_alpha:         50
+            fill_alpha:        100
+            fill_color:     222222
+            line_thickness:      5
+        <%= dial :text, :needle_north %>
+            x:        180
+            y:         83
+            size:      22
+            rotation:   0
+            width:     40        
+            color: ff0000
+            align: center
+            text: N
+        <%= dial :text, :needle_east %>
+            x:        275
+            y:        130
+            size:      16
+            rotation:  90
+            color: 000000
+            align: center
+            width: 40
+            text: E
+        <%= dial :text, :needle_west %>
+            x:        125
+            y:        170
+            size:      16
+            rotation: -90
+            color: 000000
+            align: center
+            width: 40
+            text: W
+        <%= dial :text, :needle_south %>
+            x:        220
+            y:        225
+            size:      16
+            rotation: 180
+            width:     40        
+            color: 000000
+            align: center
+            text:  S

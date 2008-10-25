@@ -1,0 +1,120 @@
+<%= chart :line %>
+
+  <%=comp :axis_category %>
+    shadow:  low
+    size:     10
+    alpha:    80
+    skip:     11
+
+  <%=comp :axis_value %>
+    shadow:       low
+    color:     ffffff
+    show_min:   false
+
+  <%=comp :chart_border %>
+    top_thickness:     1
+    bottom_thickness:  1
+    left_thickness:    1
+    right_thickness:   1
+
+  <%=comp :chart_grid_h %>
+    alpha:       7
+    thickness:  10
+
+  <%=comp :chart_grid_v %>
+    alpha:      7
+    thickness:  1
+
+  <%=comp :chart_guide %>
+    radius:                 3
+    background_color:  ff4400
+    alpha:                 75
+    snap_h:              true
+    size:                  10
+    thickness:              1
+    fill_alpha:            75
+    text_h_alpha:          90
+    text_v_alpha:          90
+    vertical:            true
+    horizontal:          true
+    type:              dotted
+    snap_v:              true
+    text_color:             0
+    color:                  0
+    fill_color:        FF4400
+    line_thickness:         0
+
+  <%=comp :chart_pref %>
+    fill_shape:      false
+    point_shape:      none
+    line_thickness:      2
+
+  <%=comp :chart_rect %>
+    shadow:          high
+    positive_alpha:    75
+    height:           100
+    bevel:             bg
+
+  <%=comp :chart_type %>
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       35
+          id:        high
+          distance:     5
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      35
+          id:        low
+          distance:    2
+          blurX:       5
+      - <%= filter_type :shadow %>
+          blurY:        2
+          angle:       45
+          alpha:       15
+          id:        data
+          distance:     1
+          blurX:        2
+      - <%= filter_type :bevel %>
+          blurY:               50
+          inner:             true
+          angle:               45
+          highlightAlpha:      10
+          id:                  bg
+          highlightColor:  ff88ff
+          shadowAlpha:         20
+          blurX:               50
+          distance:            10
+
+  <%=comp :scroll %>
+    url_button_2_idle:                                 default
+    url_slider_handle_1:   charts/sliders/preview_handle_1.swf
+    button_length:                                           0
+    x:                                                      60
+    url_button_1_idle:                                 default
+    url_slider_handle_2:   charts/sliders/preview_handle_2.swf
+    slider_handle_length:                                   22
+    delay:                                                   1
+    y:                                                     185
+    start:                                                  20
+    height:                                                 35
+    url_slider_body:                  charts/sliders/black.swf
+    reverse_handle:                                       true
+    drag:                                                 true
+    transition:                                       dissolve
+    width:                                                 301
+    span:                                                   40
+
+  <%=comp :legend %>
+    shadow:        data
+    bullet:      circle
+    fill_alpha:       0
+    y:               35
+
+  <%=comp :series_color %>
+    colors: 7777dd,eeaa55

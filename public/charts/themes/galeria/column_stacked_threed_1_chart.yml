@@ -1,0 +1,105 @@
+<%= chart :stacked_threed_column %>
+
+  <%=comp :axis_category %>
+    shadow:              low
+    size:                 12
+    alpha:                75
+    orientation:  horizontal
+    color:            ffffff
+
+  <%=comp :axis_ticks %>
+    value_ticks:     false
+    category_ticks:  false
+
+  <%=comp :axis_value %>
+    alpha:  0
+
+  <%=comp :chart_border %>
+    top_thickness:     0
+    bottom_thickness:  0
+    left_thickness:    0
+    right_thickness:   0
+
+  <%=comp :chart_grid_h %>
+    thickness:  0
+
+  <%=comp :chart_label %>
+    shadow:       low
+    alpha:         70
+    size:           9
+    position:  middle
+
+  <%=comp :chart_pref %>
+    min_x:   0
+    max_x:  80
+    min_y:  10
+    max_y:  70
+
+  <%=comp :chart_rect %>
+    x:               -15
+    positive_alpha:    0
+    y:               -10
+    height:          245
+    negative_alpha:   25
+    width:           425
+
+  <%=comp :chart_transition %>
+    delay:              0
+    order:         series
+    type:      slide_down
+    duration:          .5
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :image %>
+          shadow:                            high
+          x:                                  300
+          delay:                                1
+          y:                                  250
+          url:         images/button_rollover.swf
+          height:                              30
+          duration:                            .6
+          transition:                    dissolve
+          width:                               75
+          text:        '                          '
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       50
+          id:        high
+          color:        0
+          distance:     3
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:       2
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       2
+
+  <%=comp :legend %>
+    line_alpha:        0
+    size:              0
+    alpha:             0
+    x:                 0
+    fill_alpha:        0
+    y:               300
+    margin:            0
+    height:            0
+    line_thickness:    0
+    width:             0
+
+  <%=comp :link %>
+
+  <%=comp :series_color %>
+    colors: 666666,768bb3
+
+  <%=comp :series %>
+    set_gap:  20
+    bar_gap:  10

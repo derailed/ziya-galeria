@@ -1,0 +1,135 @@
+<%= chart :polar %>
+
+  <%=comp :axis_category %>
+    shadow:        shadow2
+    size:               13
+    alpha:              75
+    orientation:  circular
+    color:          4e627c
+
+  <%=comp :axis_ticks %>
+
+  <%=comp :axis_value %>
+    alpha:  0
+    min:    0
+
+  <%=comp :chart_border %>
+    bottom_thickness:  0
+    left_thickness:    0
+
+  <%=comp :chart_grid_h %>
+    alpha:          20
+    thickness:       1
+    type:       dashed
+    color:      000000
+
+  <%=comp :chart_grid_v %>
+    alpha:           5
+    thickness:      20
+    type:        solid
+    color:      000000
+
+  <%=comp :chart_pref %>
+    point_size:          8
+    fill_shape:       true
+    point_shape:    circle
+    grid:         circular
+
+  <%=comp :chart_rect %>
+    x:                   60
+    positive_alpha:      25
+    y:                   40
+    height:             225
+    positive_color:  008888
+    bevel:           bevel1
+    width:              350
+
+  <%=comp :chart_transition %>
+    delay:        0.5
+    order:     series
+    type:        zoom
+    duration:     0.5
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:          shadow1
+          alpha:                 8
+          size:                 95
+          x:                  -105
+          delay:                 0
+          y:                   -30
+          color:            000000
+          duration:              3
+          layer:        background
+          transition:  slide_right
+          width:               500
+          text:        '    compare'
+      - <%= drawing :text %>
+          shadow:          shadow1
+          alpha:                 5
+          size:                 80
+          x:                   450
+          delay:                 0
+          y:                    75
+          color:            000000
+          duration:              5
+          transition:  slide_right
+          text:        '      speed'
+      - <%= drawing :text %>
+          shadow:          shadow1
+          alpha:                 4
+          size:                 50
+          x:                   600
+          delay:                 0
+          y:                   150
+          color:            000000
+          duration:             10
+          transition:  slide_right
+          text:        '       cost'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:          10
+          angle:          45
+          alpha:         100
+          id:        shadow1
+          color:           0
+          distance:        2
+          blurX:          10
+      - <%= filter_type :shadow %>
+          blurY:           3
+          angle:          45
+          alpha:          50
+          id:        shadow2
+          color:           0
+          distance:        1
+          blurX:           3
+      - <%= filter_type :bevel %>
+          blurY:               10
+          angle:               45
+          highlightAlpha:      25
+          type:             outer
+          id:              bevel1
+          highlightColor:  ffffff
+          shadowAlpha:         35
+          blurX:               10
+          distance:             5
+
+  <%=comp :legend %>
+    shadow:       shadow2
+    size:              12
+    alpha:             75
+    x:                 20
+    fill_alpha:         0
+    bullet:        circle
+    y:                100
+    margin:             3
+    height:            40
+    color:         4e627c
+    width:             20
+    layout:      vertical
+
+  <%=comp :series_color %>
+    colors: ff4400,4e627c

@@ -1,0 +1,109 @@
+<%= chart :image_column %>
+
+  <%=comp :axis_category %>
+    shadow:  low
+    alpha:    50
+
+  <%=comp :axis_value %>
+    shadow:     low
+    size:        10
+    alpha:       65
+    color:   aaddff
+
+  <%=comp :axis_ticks %>
+    value_ticks:     false
+    category_ticks:   true
+
+  <%=comp :chart_border %>
+    top_thickness:     0
+    bottom_thickness:  0
+    left_thickness:    0
+    right_thickness:   0
+
+  <%=comp :chart_grid_h %>
+    alpha:           5
+    thickness:      10
+    color:      ffffff
+
+  <%=comp :chart_rect %>
+    x:                  140
+    positive_alpha:     100
+    y:                   55
+    height:             175
+    positive_color:  566069
+    bevel:               bg
+    width:              225
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:      high
+          alpha:         25
+          rotation:      90
+          size:          66
+          x:            110
+          y:             -2
+          color:     ff4400
+          height:       200
+          width:        500
+          text:      'GROWTH'
+      - <%= drawing :text %>
+          shadow:      high
+          alpha:         90
+          rotation:     -90
+          size:          66
+          x:            -12
+          y:            300
+          color:     ff4400
+          height:       200
+          width:        500
+          text:      'GROWTH'
+      - <%= drawing :text %>
+          shadow:      high
+          alpha:         65
+          rotation:       0
+          size:          55
+          x:            110
+          y:             -9
+          color:     aaddff
+          height:       200
+          width:        500
+          text:      '2006-2008'
+      - <%= drawing :text %>
+          shadow:          high
+          alpha:             60
+          rotation:           0
+          size:              66
+          x:                 58
+          y:                233
+          color:         ffff66
+          height:           200
+          layer:     background
+          width:            500
+          text:      '   revenue'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       40
+          id:        high
+          distance:     5
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      35
+          id:        low
+          distance:    2
+          blurX:       5
+      - <%= filter_type :bevel %>
+          blurY:             60
+          angle:             45
+          highlightAlpha:    10
+          type:            full
+          id:                bg
+          shadowAlpha:       10
+          blurX:             60
+          distance:          10

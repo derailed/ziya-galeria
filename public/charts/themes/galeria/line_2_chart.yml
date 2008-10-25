@@ -1,0 +1,222 @@
+<%= chart :line %>
+  <%=comp :axis_category %>
+    alpha:  0
+
+  <%=comp :axis_ticks %>
+    value_ticks:         true
+    minor_color:       222222
+    minor_count:            1
+    major_thickness:        2
+    position:         outside
+    category_ticks:     false
+    minor_thickness:        1
+
+  <%=comp :axis_value %>
+    shadow:     low
+    steps:        6
+    size:        10
+    alpha:       50
+    max:        120
+    min:          0
+    color:   ffffff
+
+  <%=comp :chart_border %>
+    top_thickness:     2
+    bottom_thickness:  2
+    left_thickness:    2
+    right_thickness:   2
+
+  <%=comp :chart_grid_h %>
+    alpha:         10
+    thickness:      1
+    type:       solid
+
+  <%=comp :chart_grid_v %>
+    alpha:         10
+    thickness:      1
+    type:       solid
+
+  <%=comp :chart_guide %>
+    radius:               5
+    alpha:               50
+    line_alpha:          75
+    thickness:            1
+    text_h_alpha:        90
+    horizontal:        true
+    type:            dashed
+    line_color:      FFFF00
+    text_color:      FFFF00
+    color:           ffffff
+    line_thickness:       2
+
+  <%=comp :chart_note %>
+    background_color:  8888FF
+    shadow:               low
+    size:                  11
+    alpha:                 90
+    x:                      0
+    background_alpha:      65
+    y:                   -125
+    type:              bullet
+    offset_y:               5
+    color:             AAAAFF
+
+  <%=comp :chart_pref %>
+    fill_shape:      false
+    point_shape:      none
+    line_thickness:      2
+
+  <%=comp :chart_rect %>
+    x:                   40
+    positive_alpha:      30
+    y:                   20
+    height:             200
+    positive_color:  000000
+    bevel:               bg
+    width:              335
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:       low
+          alpha:         15
+          rotation:     -90
+          size:          50
+          x:            -10
+          y:            348
+          color:     ffffff
+          height:       150
+          h_align:   center
+          width:        300
+          v_align:      top
+          text:      ' hertz'
+      - <%= drawing :text %>
+          shadow:      low
+          alpha:        15
+          size:         60
+          x:             0
+          y:             0
+          height:      300
+          width:       320
+          v_align:  bottom
+          text:     'output'
+      - <%= drawing :image %>
+          x:                         62
+          y:                        228
+          url:     images/slider_bg.gif
+          height:                    17
+          layer:             background
+          width:                    289
+          text:    '                    '
+      - <%= drawing :button %>
+          x:                                  278
+          y:                                  265
+          height:                              21
+          url_idle:    images/button_all_idle.jpg
+          url_over:    images/button_all_over.jpg
+          url_press:  images/button_all_press.jpg
+          width:                               44
+          text:       '                           '
+      - <%= drawing :button %>
+          x:                                325
+          y:                                265
+          height:                            21
+          url_idle:    images/button_1_idle.jpg
+          url_over:    images/button_1_over.jpg
+          url_press:  images/button_1_press.jpg
+          width:                             22
+          text:       '                         '
+      - <%= drawing :button %>
+          x:                                350
+          y:                                265
+          height:                            21
+          url_idle:    images/button_2_idle.jpg
+          url_over:    images/button_2_over.jpg
+          url_press:  images/button_2_press.jpg
+          width:                             22
+          text:       '                         '
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       5
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       25
+          id:        high
+          distance:     5
+          blurX:       10
+      - <%= filter_type :bevel %>
+          blurY:               15
+          angle:               45
+          highlightAlpha:      25
+          type:             outer
+          id:                  bg
+          highlightColor:  ffffff
+          shadowAlpha:         50
+          blurX:               15
+          distance:             5
+
+  <%=comp :context_menu %>
+    full_screen:  false
+
+  <%=comp :legend %>
+    layout:  hide
+
+  <%=comp :link %>
+    areas:
+      - <%=area :area %>
+          x:      278
+          y:      265
+          width:  44
+          height: 21
+          url:    'start=0&span=100'
+          target: scroll
+      - <%=area :area %>
+          x:      325
+          y:      265
+          width:  22
+          height: 21
+          url:    'start=28&span=40'
+          target: scroll
+      - <%=area :area %>
+          x:      350
+          y:      265
+          width:  22
+          height: 21
+          url:    'start=58&span=40'
+          target: scroll
+
+  <%=comp :scroll %>
+    x:                                             38
+    y:                                            227    
+    gap:                                            2
+    alpha:                                        100
+    button_length:                                 23
+    height:                                        20
+
+    scroll_detail:                                 65
+    slider_handle_length:                          10
+    drag:                                        true
+    width:                                        337
+    start:                                          0    
+    span:                                         100            
+    url_button_2_idle:            images/slider_R.gif
+    url_button_2_over:       images/slider_over_R.gif
+    url_button_2_press:           images/slider_R.gif    
+    url_slider_handle_1:   images/slider_handle_L.gif
+    url_slider_handle_2:   images/slider_handle_R.gif
+    url_button_1_idle:            images/slider_L.gif
+    url_button_1_over:       images/slider_over_L.gif
+    url_button_1_press:           images/slider_L.gif
+    url_slider_body:         images/slider_handle.gif
+    
+
+  <%=comp :series_color %>
+    colors: 77bb11,cc5511

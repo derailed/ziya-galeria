@@ -1,0 +1,41 @@
+8
+
+dir
+49
+svn+ssh://derailed@rubyforge.org/var/svn/ziya/samples/galeria/public/charts/scripts
+svn+ssh://derailed@rubyforge.org/var/svn/ziya
+
+
+
+2008-08-24T05:58:59.916093Z
+38
+derailed
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+9267a532-55c3-4c28-bd7c-9cf1c6ad6b6f
+
+output_jpg.php
+file
+
+
+
+
+2008-08-24T05:58:59.000000Z
+cbe3326a178f3f428a6a0356dfc27fdc
+2008-08-24T05:58:59.916093Z
+38
+derailed
+has-props
+

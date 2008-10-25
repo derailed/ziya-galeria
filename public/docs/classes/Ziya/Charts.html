@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Ziya::Charts</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Ziya::Charts</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/ziya/charts/area_rb.html">
+                lib/ziya/charts/area.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/area_threed_rb.html">
+                lib/ziya/charts/area_threed.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/bar_rb.html">
+                lib/ziya/charts/bar.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/base_rb.html">
+                lib/ziya/charts/base.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/bubble_rb.html">
+                lib/ziya/charts/bubble.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/candle_stick_rb.html">
+                lib/ziya/charts/candle_stick.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/column_rb.html">
+                lib/ziya/charts/column.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/column_threed_rb.html">
+                lib/ziya/charts/column_threed.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/donut_rb.html">
+                lib/ziya/charts/donut.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/floating_bar_rb.html">
+                lib/ziya/charts/floating_bar.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/floating_column_rb.html">
+                lib/ziya/charts/floating_column.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/line_rb.html">
+                lib/ziya/charts/line.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/mixed_rb.html">
+                lib/ziya/charts/mixed.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/parallel_threed_column_rb.html">
+                lib/ziya/charts/parallel_threed_column.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/pie_rb.html">
+                lib/ziya/charts/pie.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/pie_threed_rb.html">
+                lib/ziya/charts/pie_threed.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/polar_rb.html">
+                lib/ziya/charts/polar.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/scatter_rb.html">
+                lib/ziya/charts/scatter.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/stacked_area_rb.html">
+                lib/ziya/charts/stacked_area.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/stacked_bar_rb.html">
+                lib/ziya/charts/stacked_bar.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/stacked_column_rb.html">
+                lib/ziya/charts/stacked_column.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/stacked_threed_area_rb.html">
+                lib/ziya/charts/stacked_threed_area.rb
+                </a>
+        <br />
+                <a href="../../files/lib/ziya/charts/stacked_threed_column_rb.html">
+                lib/ziya/charts/stacked_threed_column.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <hr size="10"></hr><p>
+Generates necessary xml for a stacked 3d column chart
+</p>
+<p>
+Author: Fernand
+</p>
+<hr size="10"></hr>
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Charts/Area.html" class="link">Ziya::Charts::Area</a><br />
+Class <a href="Charts/AreaThreed.html" class="link">Ziya::Charts::AreaThreed</a><br />
+Class <a href="Charts/Bar.html" class="link">Ziya::Charts::Bar</a><br />
+Class <a href="Charts/Base.html" class="link">Ziya::Charts::Base</a><br />
+Class <a href="Charts/Bubble.html" class="link">Ziya::Charts::Bubble</a><br />
+Class <a href="Charts/CandleStick.html" class="link">Ziya::Charts::CandleStick</a><br />
+Class <a href="Charts/Column.html" class="link">Ziya::Charts::Column</a><br />
+Class <a href="Charts/ColumnThreed.html" class="link">Ziya::Charts::ColumnThreed</a><br />
+Class <a href="Charts/Donut.html" class="link">Ziya::Charts::Donut</a><br />
+Class <a href="Charts/FloatingBar.html" class="link">Ziya::Charts::FloatingBar</a><br />
+Class <a href="Charts/FloatingColumn.html" class="link">Ziya::Charts::FloatingColumn</a><br />
+Class <a href="Charts/Line.html" class="link">Ziya::Charts::Line</a><br />
+Class <a href="Charts/Mixed.html" class="link">Ziya::Charts::Mixed</a><br />
+Class <a href="Charts/ParallelThreedColumn.html" class="link">Ziya::Charts::ParallelThreedColumn</a><br />
+Class <a href="Charts/Pie.html" class="link">Ziya::Charts::Pie</a><br />
+Class <a href="Charts/PieThreed.html" class="link">Ziya::Charts::PieThreed</a><br />
+Class <a href="Charts/Polar.html" class="link">Ziya::Charts::Polar</a><br />
+Class <a href="Charts/Scatter.html" class="link">Ziya::Charts::Scatter</a><br />
+Class <a href="Charts/StackedArea.html" class="link">Ziya::Charts::StackedArea</a><br />
+Class <a href="Charts/StackedBar.html" class="link">Ziya::Charts::StackedBar</a><br />
+Class <a href="Charts/StackedColumn.html" class="link">Ziya::Charts::StackedColumn</a><br />
+Class <a href="Charts/StackedThreedArea.html" class="link">Ziya::Charts::StackedThreedArea</a><br />
+Class <a href="Charts/StackedThreedColumn.html" class="link">Ziya::Charts::StackedThreedColumn</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

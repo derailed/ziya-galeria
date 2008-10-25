@@ -1,0 +1,375 @@
+<%= gauge :base %>
+  <%= dial :move, :version %>
+      step: 20
+      start_x_offset: 150
+      shake_span: 0
+      shadow_alpha: 0
+      <%= dials %>
+        <%= dial :text, :version_number %>
+            size:  14
+            alpha: 65
+            x:     0
+            y:     250
+            align: right
+            width: 370
+            text:  ZiYa Gem 2.0
+
+  <%= dial :scale, :title %>
+      step: 3
+      x: 200
+      start_scale: 20
+      y: 220
+      shake_span: 1
+      direction: both
+      end_scale: 20
+      <%= dials %>
+        <%= dial :text, :title_text %>
+            size: 100
+            alpha: 75
+            x: -120
+            y: 260
+            color: 88ff00
+            align: center
+            width: 1500
+            text:  Mini Gauges  
+        
+  # ---------------------------------------------------------------------------
+  # Volume gauge
+  <%= dial :radial_ticks, :volume %>
+      x:              100
+      y:               75
+      radius:          35
+      length:           4
+      start_angle:    235
+      end_angle:      485
+      ticks:           10
+      thickness:        2
+      color:       000000
+    
+  <%= dial :rotate, :volume_setting %>
+      x:               100
+      y:                75
+      start:           300
+      span:            160
+      step:              5
+      skake_span:       20
+      shadow_alpha:     20
+      shadow_x_offset:   3
+      shadow_y_offset:   3
+      <%= dials %>
+        <%= dial :circle, :circle_1 %>
+            x:             100
+            y:              75
+            radius:         30
+            fill_color: 777777
+            line_thickness: 5
+            line_alpha:     75        
+        <%= dial :circle, :circle_2 %>
+            x:          100
+            y:           55
+            radius:       5
+            fill_alpha:  80
+            
+  # ---------------------------------------------------------------------------
+  # Gas gauge  
+  <%= dial :circle, :gas %>
+      x:             200
+      y:              75
+      radius:         30
+      fill_alpha:      0
+      line_thickness:  5    
+    
+  <%= dial :circle, :gas_inner %>
+      x:      200
+      y:       75
+      radius:  30
+      start:    0
+      end:     90	  
+    
+  <%= dial :radial_ticks, :gaz_ticks %>
+      x:              200
+      y:               75
+      radius:          27
+      length:          10
+      start_angle:      0
+      end_angle:       90
+      ticks:           10
+      thickness:        2
+      color:       34343a
+    	    
+  <%= dial :rotate, :gaz_level %>
+      x:               200
+      y:                75
+      start:           230
+      span:            160
+      step:              5
+      shadow_alpha:     20
+      shadow_x_offset:   3
+      shadow_y_offset:   3
+      <%= dials %>
+        <%= dial :line, :needle %>
+            x1:             200
+            y1:              45
+            x2:             200
+            y2:              52
+            color:       ff3300
+            thickness:        4      
+                
+  # ---------------------------------------------------------------------------
+  # Clock
+  <%= dial :radial_ticks, :clock_ticks %>
+      x:              300
+      y:               75
+      radius:          27
+      length:           5
+      start_angle:      0
+      end_angle:      345
+      ticks:           24
+      thickness:        3
+      color:       555555
+    
+  <%= dial :rotate, :clock_big_hand %>
+      x:               300
+      y:                75
+      start:           300
+      span:         360000
+      step:              2
+      shadow_alpha:     20
+      shadow_x_offset:   3
+      shadow_y_offset:   3
+      <%= dials %>
+        <%= dial :line, :needle %>
+            x1:           300
+            y1:            55
+            x2:           300
+            y2:            85
+            color:     ff3300
+            thickness:      3
+      
+  <%= dial :rotate, :clock_small_hand %>
+      x:               300
+      y:                75
+      start:           300
+      span:         360000
+      step:              5
+      shadow_alpha:     20
+      shadow_x_offset:   3
+      shadow_y_offset:   3
+      <%= dials %>
+        <%= dial :line, :needle %>
+            x1:           300
+            y1:            45
+            x2:           300
+            y2:            85
+            thickness:      2
+      
+  <%= dial :circle, :clock_center %>
+      x:          300
+      y:           75
+      radius:       5
+      fill_alpha:  75
+    
+  # ---------------------------------------------------------------------------
+  # Charge gauge
+  <%= dial :circle, :charge_bg %>
+      x:              100
+      y:              175
+      radius:          30
+      start:          270
+      end:            450    
+      fill_alpha:      90
+      fill_color: 'ff3300'
+
+  <%= dial :circle, :charge_center %>
+      x:              91
+      y:             175
+      radius:         20
+      start:         270        
+      end:           450
+      fill_color: 34343a
+
+  <%= dial :rotate, :charge_boost %>
+      x:            100
+      y:            175
+      step:          10
+      start:         40
+      span:         120    
+      shake_span:    20
+      shadow_alpha:   0
+      <%= dials %>
+        <%= dial :circle, :boost %>
+            radius: 35
+            x: 100
+            y: 175
+            end: 450
+            start: 270
+            fill_color: 34343a
+
+  <%= dial :text, :charge_neg %>
+      x:        50
+      y:       175
+      size:     16
+      alpha:    65
+      width:    40    
+      align: center
+      text:  '-'
+
+  <%= dial :text, :charge_pos %>
+      x:        110
+      y:        175
+      size:      16
+      alpha:     65
+      width:     28    
+      align: center
+      text: '+'
+
+  <%= dial :circle, :charge_zz %>
+      x:              91
+      y:             175
+      radius:         16    
+      end:           450
+      start:         270          
+      fill_alpha:    100
+      fill_color: 484848
+    
+  # ---------------------------------------------------------------------------
+  # Sun dial
+
+  <%= dial :radial_ticks, :sun_dial_low %>
+      x:              200
+      y:              175
+      radius:          25
+      length:          10
+      start_angle:    270
+      end_angle:      350
+      ticks:            5
+      thickness:        4
+      color:       88ff00
+  
+  <%= dial :radial_ticks, :sun_dial_high %>
+      x:              200
+      y:              175
+      radius:          25
+      length:          10
+      start_angle:     10
+      end_angle:       90
+      ticks:            5
+      thickness:        4
+      color:       ff3300
+    
+  <%= dial :rotate, :sun_needle %>
+      x:            200
+      y:            175
+      step:          20
+      start:         -5
+      shake_span:    40
+      shake_snap:    20
+      shadow_alpha:   0
+      span:         135
+      <%= dials %>
+        <%= dial :circle, :needle %>
+            radius:      45
+            x:          200
+            y:          175
+            end:        450
+            start:      270
+            fill_color: 34343a
+
+  <%= dial :circle, :sun_outer %>
+      x:             200
+      y:             175
+      radius:         20
+      fill_alpha:      0    
+      line_alpha:     50    
+      line_thickness:  4  
+    
+  # ---------------------------------------------------------------------------
+  # Sound gauge
+
+  <%= dial :scale, :sound_animate %>
+      x:           300
+      y:           175
+      start_scale:   0
+      end_scale:    80
+      direction:  both
+      step:          3    
+      shake_span:   20
+      shake_snap:   20
+      shadow_alpha:  0
+      <%= dials %>    
+        <%= dial :circle, :needle %>
+            x:             300
+            y:             175
+            radius:         30
+            fill_color: eeeeee
+            
+  <%= dial :circle, :sound_circle_1 %>
+      x:      300
+      y:      175
+      radius:  45
+      start:  135
+      end:    405
+      fill_color: 34343a
+
+  <%= dial :circle, :sound_circle_2 %>
+      x:      300
+      y:      175
+      radius: 6
+      fill_color: 34343a
+      line_color: 34343a
+      line_thickness: 3
+
+  <%= dial :circle, :sound_circle_3 %>
+      x:      300
+      y:      175
+      radius:  12
+      fill_alpha: 0
+      line_color: 34343a
+      line_thickness: 3
+
+  <%= dial :circle, :sound_circle_4 %>
+      x: 300
+      y: 175
+      radius: 18
+      fill_alpha: 0
+      line_color: 34343a
+      line_thickness: 3
+
+  <%= dial :circle, :sound_circle_5 %>
+      x: 300
+      y: 175
+      radius: 24
+      fill_alpha: 0
+      line_color: 34343a
+      line_thickness: 3
+
+  <%= dial :circle, :sound_circle_6 %>
+      x: 300
+      y: 175
+      radius: 30
+      fill_alpha: 0
+      line_color: 34343a
+      line_thickness: 3
+
+  <%= dial :polygon, :sound_speaker %>
+      fill_color: 222222
+      line_alpha: 0
+      <%= dials %>
+        <%= dial :point, :pt1 %>
+            x: 302
+            y: 165
+        <%= dial :point, :pt2 %>
+            x: 302
+            y: 185
+        <%= dial :point, :pt3 %>
+            x: 295
+            y: 180
+        <%= dial :point, :pt4 %>
+            x: 290
+            y: 180
+        <%= dial :point, :pt5 %>
+            x: 290
+            y: 170
+        <%= dial :point, :pt6 %>
+            x: 295
+            y: 170

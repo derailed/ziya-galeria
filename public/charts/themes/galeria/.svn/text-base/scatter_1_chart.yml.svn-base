@@ -1,0 +1,264 @@
+<%= chart :scatter %>
+
+  <%=comp :axis_category %>
+    shadow:              low
+    size:                 13
+    alpha:                85
+    orientation:  horizontal
+    color:            111111
+
+  <%=comp :axis_ticks %>
+    value_ticks:         true
+    minor_color:       333344
+    minor_count:            1
+    major_thickness:        2
+    major_color:       333344
+    position:         outside
+    category_ticks:      true
+    minor_thickness:        1
+
+  <%=comp :axis_value %>
+    shadow:        low
+    steps:           4
+    size:           10
+    alpha:         100
+    max:           700
+    decimals:        0
+    min:           300
+    color:      ff6644
+    show_min:     true
+
+  <%=comp :chart_border %>
+    top_thickness:          0
+    bottom_thickness:       2
+    left_thickness:         2
+    color:             222222
+    right_thickness:        0
+
+  <%=comp :chart_grid_h %>
+    alpha:          10
+    thickness:       1
+    type:       dashed
+    color:      ffffff
+
+  <%=comp :chart_grid_v %>
+    alpha:          10
+    thickness:       1
+    type:       dashed
+    color:      ffffff
+
+  <%=comp :chart_label %>
+    shadow:       low
+    size:          10
+    alpha:         65
+    color:     000000
+    position:   below
+
+  <%=comp :chart_pref %>
+    point_size:   10
+    point_shape:   x
+
+  <%=comp :chart_rect %>
+    x:                   75
+    positive_alpha:      50
+    y:                  100
+    height:             125
+    positive_color:  4c5e6f
+    bevel:               bg
+    width:              300
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :rect %>
+          x:                        0
+          y:                        0
+          height:                 300
+          fill_color:          7777CC
+          bevel:               bevel1
+          line_thickness:           0
+          layer:           background
+          width:                  400
+          text:            '          '
+      - <%= drawing :text %>
+          shadow:         low
+          alpha:           10
+          size:           150
+          x:             -120
+          y:              -48
+          color:       ffffff
+          height:         200
+          layer:   background
+          width:          530
+          text:    '     range'
+      - <%= drawing :text %>
+          shadow:         low
+          alpha:           10
+          size:           150
+          x:             -180
+          y:              180
+          color:       ffffff
+          height:         200
+          layer:   background
+          width:          600
+          text:    '     speed'
+      - <%= drawing :text %>
+          alpha:       75
+          size:        50
+          x:           25
+          y:           32
+          blur:     blur1
+          color:   ffffff
+          height:     100
+          width:      400
+          text:    'performance'
+      - <%= drawing :text %>
+          shadow:    high
+          alpha:       80
+          size:        50
+          x:            5
+          y:           32
+          color:   eeffee
+          height:     100
+          width:      400
+          text:    'performance'
+      - <%= drawing :text %>
+          shadow:      low
+          alpha:        70
+          size:         50
+          x:             0
+          y:             0
+          color:    88ff44
+          height:      287
+          h_align:   right
+          bevel:     small
+          width:       365
+          v_align:  bottom
+          text:     ' speed'
+      - <%= drawing :text %>
+          shadow:      low
+          alpha:        75
+          size:         14
+          x:             0
+          y:             0
+          color:    ffffff
+          height:      291
+          h_align:   right
+          width:       365
+          v_align:  bottom
+          text:     'miles/hour'
+      - <%= drawing :text %>
+          shadow:       low
+          alpha:         70
+          rotation:     -90
+          size:          50
+          x:            -20
+          y:            270
+          color:     88ff44
+          height:        60
+          h_align:    right
+          bevel:      small
+          width:        170
+          v_align:   bottom
+          text:      ' range'
+      - <%= drawing :text %>
+          shadow:       low
+          alpha:         75
+          rotation:     -90
+          size:          14
+          x:              0
+          y:            250
+          color:     ffffff
+          height:        47
+          h_align:    right
+          width:        155
+          v_align:   bottom
+          text:      ' miles'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          inner:        true
+          blurY:         200
+          angle:         135
+          alpha:          20
+          id:        shadow1
+          color:      000000
+          quality:         1
+          distance:       50
+          blurX:         300
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          color:       0
+          distance:    2
+          blurX:       5
+      - <%= filter_type :shadow %>
+          blurY:         10
+          angle:         45
+          alpha:     75high
+          id:          high
+          color:          0
+          distance:       3
+          blurX:         10
+      - <%= filter_type :bevel %>
+          blurY:              100
+          angle:               45
+          highlightAlpha:      20
+          shadowColor:     002266
+          type:             inner
+          id:              bevel1
+          highlightColor:  aa44ff
+          shadowAlpha:         10
+          blurX:              150
+          distance:            20
+      - <%= filter_type :bevel %>
+          blurY:               2
+          angle:              45
+          highlightAlpha:     35
+          type:            inner
+          id:              small
+          shadowAlpha:        25
+          blurX:               2
+          distance:            1
+      - <%= filter_type :bevel %>
+          blurY:             50
+          angle:             10
+          highlightAlpha:    20
+          type:            full
+          id:                bg
+          shadowAlpha:       25
+          blurX:             50
+          distance:          10
+      - <%= filter_type :blur %>
+          blurY:        0
+          id:       blur1
+          quality:      1
+          blurX:      100
+
+  <%=comp :legend %>
+    shadow:                 low
+    line_alpha:               0
+    size:                    12
+    alpha:                   65
+    x:                       75
+    fill_alpha:              20
+    bullet:              circle
+    y:                       82
+    margin:                   3
+    line_color:          000000
+    height:                  10
+    fill_color:          ffffff
+    color:               ffffff
+    line_thickness:           0
+    width:                  300
+    layout:          horizontal
+
+  <%=comp :series_color %>
+    colors: 88ff44,ff8800,FFDD00,ffffff
+
+  <%=comp :series_explode %>
+    numbers: 100, 100, 200

@@ -1,0 +1,101 @@
+<%= chart :donut %>
+  <%=comp :chart_label %>
+    shadow:                      low
+    as_percentage:              true
+    background_color:         ddeedd
+    alpha:                        75
+    size:                          9
+    color:                         0
+    position:          inside_cursor
+
+  <%=comp :chart_pref %>
+    empty_center:  true
+    bevel:           bg
+    select:        true
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :circle %>
+          radius:                 112
+          x:                      210
+          fill_alpha:             100
+          y:                      157
+          fill_color:          eeffee
+          bevel:                   bg
+          line_thickness:           0
+          layer:           background
+          text:            '          '
+      - <%= drawing :circle %>
+          radius:                  24
+          shadow:               inner
+          x:                      210
+          fill_alpha:             100
+          y:                      157
+          fill_color:          eeffee
+          line_thickness:           0
+          layer:           background
+          text:            '          '
+      - <%= drawing :text %>
+          shadow:    high
+          size:       100
+          rotation:   -90
+          alpha:        5
+          x:          -20
+          y:          295
+          color:        0
+          width:      400
+          text:      'donut'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      20
+          id:        low
+          color:       0
+          distance:    2
+          blurX:       5
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       90
+          alpha:       50
+          id:        high
+          color:        0
+          distance:     5
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:        10
+          inner:      true
+          angle:        45
+          alpha:        30
+          id:        inner
+          color:         0
+          distance:      5
+          blurX:        10
+      - <%= filter_type :bevel %>
+          blurY:               35
+          angle:               45
+          highlightAlpha:     100
+          shadowColor:          0
+          type:              full
+          id:                  bg
+          highlightColor:  eeeeff
+          shadowAlpha:         15
+          blurX:               35
+          distance:            10
+
+  <%=comp :legend %>
+    shadow:           low
+    line_alpha:         0
+    size:              12
+    alpha:             75
+    x:                320
+    fill_alpha:         0
+    bullet:          line
+    height:            60
+    bevel:            low
+    transition:  dissolve
+    width:             50

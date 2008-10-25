@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>add (Ziya::Charts::Base)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ziya/charts/base.rb, line 138</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add</span>( <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> )
+      <span class="ruby-comment cmt"># TODO Validation categories = series, series = labels, etc...</span>
+      <span class="ruby-identifier">directive</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">directive</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:axis_category_text</span>
+          <span class="ruby-identifier">categories</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> []
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify an array of categories&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">categories</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">categories</span>.<span class="ruby-identifier">insert</span>( <span class="ruby-value">0</span>, <span class="ruby-keyword kw">nil</span> )
+          <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">directive</span>] = <span class="ruby-identifier">categories</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:axis_category_label</span>
+          <span class="ruby-identifier">labels</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> []
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify an array of category labels&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">labels</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">directive</span>] = <span class="ruby-identifier">labels</span>          
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:composites</span>
+          <span class="ruby-identifier">composites</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span><span class="ruby-operator">:</span> []
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify an array of urls for the composite chart(s)&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">composites</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">directive</span>] = <span class="ruby-identifier">composites</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:axis_value_label</span>
+          <span class="ruby-identifier">values</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> []
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify an array of values&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">directive</span>] = <span class="ruby-identifier">values</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:series</span>
+          <span class="ruby-identifier">legend</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>
+          <span class="ruby-comment cmt"># raise ArgumentError, &quot;Must specify a series name&quot; if legend.empty?</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>( <span class="ruby-constant">Array</span> )
+            <span class="ruby-identifier">points</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> []
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify an array of data points&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">points</span>.<span class="ruby-identifier">empty?</span>
+            <span class="ruby-identifier">points</span>.<span class="ruby-identifier">insert</span>( <span class="ruby-value">0</span>, <span class="ruby-identifier">legend</span> )
+            <span class="ruby-ivar">@series_desc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">points</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify an array of data points&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:user_data</span>
+          <span class="ruby-identifier">key</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify a key&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">value</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+          <span class="ruby-comment cmt"># raise ArgumentError, &quot;Must specify a value&quot; if value.empty?</span>
+          <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:styles</span>
+          <span class="ruby-identifier">styles</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify a set of styles&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">styles</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span>          
+          <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">directive</span>] = <span class="ruby-identifier">styles</span>   
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:chart_types</span>
+          <span class="ruby-identifier">types</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> []
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify a set of chart types&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">types</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span>          
+          <span class="ruby-ivar">@options</span>[<span class="ruby-identifier">directive</span>] = <span class="ruby-identifier">types</span>                        
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:theme</span>
+          <span class="ruby-identifier">theme</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-value str">&quot;&quot;</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify a theme name&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">theme</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span>          
+          <span class="ruby-ivar">@theme</span> = <span class="ruby-node">&quot;#{Ziya.themes_dir}/#{theme}&quot;</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:mode</span>
+          <span class="ruby-ivar">@render_mode</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Integer</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-value">-1</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Must specify a valid generation mode&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@render_mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">-1</span>          
+        <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Invalid directive must be one of &quot;</span> <span class="ruby-operator">+</span> 
+                                 <span class="ruby-value str">&quot;:axis_category_text, :axis_value, :series, :user_data&quot;</span>
+      <span class="ruby-keyword kw">end</span> 
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

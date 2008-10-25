@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>render_extra_components (Ziya::Gauges::Base)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/ziya/gauges/base.rb, line 40</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">render_extra_components</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:url</span>]
+          <span class="ruby-constant">Ziya</span><span class="ruby-operator">::</span><span class="ruby-constant">Gauges</span><span class="ruby-operator">::</span><span class="ruby-constant">Support</span><span class="ruby-operator">::</span><span class="ruby-constant">Update</span>.<span class="ruby-identifier">new</span>(
+            <span class="ruby-identifier">:url</span>        =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:url</span>],
+            <span class="ruby-identifier">:retry</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:retry</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>,
+            <span class="ruby-identifier">:timeout</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:timeout</span>] <span class="ruby-operator">||</span> <span class="ruby-value">30</span>,
+            <span class="ruby-identifier">:delay_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:delay_type</span>] <span class="ruby-operator">||</span> <span class="ruby-value">1</span>,
+            <span class="ruby-identifier">:delay</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:delay</span>] <span class="ruby-operator">||</span> <span class="ruby-value">30</span> ).<span class="ruby-identifier">flatten</span>( <span class="ruby-ivar">@xml</span> )
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

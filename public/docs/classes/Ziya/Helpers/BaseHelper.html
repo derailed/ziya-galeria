@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Ziya::Helpers::BaseHelper</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Ziya::Helpers::BaseHelper</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/ziya/helpers/base_helper_rb.html">
+                lib/ziya/helpers/base_helper.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000033">area</a>&nbsp;&nbsp;
+      <a href="#M000034">chart</a>&nbsp;&nbsp;
+      <a href="#M000024">chart_url</a>&nbsp;&nbsp;
+      <a href="#M000035">clazz</a>&nbsp;&nbsp;
+      <a href="#M000030">comp</a>&nbsp;&nbsp;
+      <a href="#M000029">component</a>&nbsp;&nbsp;
+      <a href="#M000027">dial</a>&nbsp;&nbsp;
+      <a href="#M000028">dials</a>&nbsp;&nbsp;
+      <a href="#M000031">drawing</a>&nbsp;&nbsp;
+      <a href="#M000032">filter_type</a>&nbsp;&nbsp;
+      <a href="#M000026">gauge</a>&nbsp;&nbsp;
+      <a href="#M000025">indent</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="../Utils/Text.html">Ziya::Utils::Text</a></span>
+        <span class="include-name">Ziya::Helper</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+          <span class="method-name">area</span><span class="method-args">( class_name )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="BaseHelper.html#M000031">drawing</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+          <a href="BaseHelper.src/M000034.html" target="Code" class="method-signature"
+            onclick="popupCode('BaseHelper.src/M000034.html');return false;">
+          <span class="method-name">chart</span><span class="method-args">( class_name )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr><p>
+YAML Convenience for <a href="BaseHelper.html#M000034">chart</a> class
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+          <a href="BaseHelper.src/M000024.html" target="Code" class="method-signature"
+            onclick="popupCode('BaseHelper.src/M000024.html');return false;">
+          <span class="method-name">chart_url</span><span class="method-args">( url, swf_chart_dir=&quot;/charts&quot; )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr><p>
+generates a swf <a href="BaseHelper.html#M000034">chart</a> path from the
+given url. Used as helper to embed <a
+href="BaseHelper.html#M000034">chart</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+          <a href="BaseHelper.src/M000035.html" target="Code" class="method-signature"
+            onclick="popupCode('BaseHelper.src/M000035.html');return false;">
+          <span class="method-name">clazz</span><span class="method-args">( class_name, module_name=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr><p>
+YAML Convenience for <a href="BaseHelper.html#M000034">chart</a> name
+setting
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+          <span class="method-name">comp</span><span class="method-args">( component_name )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="BaseHelper.html#M000029">component</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+          <a href="BaseHelper.src/M000029.html" target="Code" class="method-signature"
+            onclick="popupCode('BaseHelper.src/M000029.html');return false;">
+          <span class="method-name">component</span><span class="method-args">( component_name )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr><p>
+YAML Convenience for <a href="BaseHelper.html#M000029">component</a>
+declaration
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+          <a href="BaseHelper.src/M000027.html" target="Code" class="method-signature"
+            onclick="popupCode('BaseHelper.src/M000027.html');return false;">
+          <span class="method-name">dial</span><span class="method-args">( comp_class, comp_name=nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr><p>
+YAML Convenience for <a href="BaseHelper.html#M000026">gauge</a> <a
+href="BaseHelper.html#M000029">component</a> declaration
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+          <a href="BaseHelper.src/M000028.html" target="Code" class="method-signature"
+            onclick="popupCode('BaseHelper.src/M000028.html');return false;">
+          <span class="method-name">dials</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr><p>
+YAML <a href="BaseHelper.html#M000028">dials</a> declaration
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000031" class="method-detail">
+        <a name="M000031"></a>
+
+        <div class="method-heading">
+          <a href="BaseHelper.src/M000031.html" target="Code" class="method-signature"
+            onclick="popupCode('BaseHelper.src/M000031.html');return false;">
+          <span class="method-name">drawing</span><span class="method-args">( class_name )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr><p>
+YAML Convenience for draw <a href="BaseHelper.html#M000029">component</a>
+class
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000032" class="method-detail">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+          <span class="method-name">filter_type</span><span class="method-args">( class_name )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="BaseHelper.html#M000031">drawing</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+          <a href="BaseHelper.src/M000026.html" target="Code" class="method-signature"
+            onclick="popupCode('BaseHelper.src/M000026.html');return false;">
+          <span class="method-name">gauge</span><span class="method-args">( class_name )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr><p>
+YAML Convenience for <a href="BaseHelper.html#M000026">gauge</a> class
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+          <a href="BaseHelper.src/M000025.html" target="Code" class="method-signature"
+            onclick="popupCode('BaseHelper.src/M000025.html');return false;">
+          <span class="method-name">indent</span><span class="method-args">( multiple= 1 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <hr size="10"></hr><p>
+<a href="BaseHelper.html#M000025">indent</a> yaml content vy multiples of 2
+spaces
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<%= chart :polar %>
+
+  <%=comp :axis_category %>
+    shadow:        shadow2
+    size:               12
+    alpha:              25
+    orientation:  circular
+    color:          000000
+
+  <%=comp :axis_ticks %>
+    value_ticks:           1
+    minor_count:           0
+    major_color:      444444
+    major_thickness:       2
+    category_ticks:        1
+
+  <%=comp :axis_value %>
+    background_color:  446688
+    size:                  11
+    alpha:                 90
+    max:                   60
+    color:             ffffff
+
+  <%=comp :chart_border %>
+    bottom_thickness:       2
+    left_thickness:         2
+    color:             444444
+
+  <%=comp :chart_grid_h %>
+    alpha:          20
+    thickness:       1
+    type:        solid
+    color:      000000
+
+  <%=comp :chart_grid_v %>
+    alpha:          10
+    thickness:       2
+    type:       dotted
+    color:      000000
+
+  <%=comp :chart_pref %>
+    type:                line
+    point_size:             0
+    line_thickness:         2
+    grid:            circular
+
+  <%=comp :chart_rect %>
+    x:                  -20
+    positive_alpha:      10
+    y:                   40
+    height:             200
+    positive_color:  000000
+    bevel:           bevel1
+    width:              350
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:    shadow2
+          alpha:          25
+          rotation:        0
+          size:           30
+          x:               0
+          y:               0
+          color:      000033
+          height:        295
+          h_align:     right
+          width:         390
+          v_align:    bottom
+          text:      'Wind Speed'
+      - <%= drawing :circle %>
+          radius:                 170
+          line_alpha:               5
+          x:                      155
+          fill_alpha:               0
+          y:                      140
+          line_color:          000000
+          bevel:               bevel1
+          line_thickness:          40
+          layer:           background
+          text:            '          '
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:          10
+          angle:          45
+          alpha:          75
+          id:        shadow1
+          color:           0
+          distance:        2
+          blurX:          10
+      - <%= filter_type :shadow %>
+          blurY:           3
+          angle:          45
+          alpha:          50
+          id:        shadow2
+          color:           0
+          distance:        1
+          blurX:           3
+      - <%= filter_type :bevel %>
+          blurY:               15
+          angle:               45
+          highlightAlpha:      25
+          type:             outer
+          id:              bevel1
+          highlightColor:  ffffff
+          shadowAlpha:         50
+          blurX:               15
+          distance:             5
+
+  <%=comp :legend %>
+    shadow:       shadow2
+    size:              12
+    alpha:             90
+    x:                290
+    fill_alpha:        10
+    bullet:          line
+    y:                180
+    margin:             5
+    height:            70
+    color:         ffffff
+    width:             20
+    layout:      vertical
+
+  <%=comp :series_color %>
+    colors: ff4400,ffff00,88ffff,88ff00

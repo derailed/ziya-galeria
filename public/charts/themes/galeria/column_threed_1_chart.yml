@@ -1,0 +1,84 @@
+<%= chart :column_threed %>
+
+  <%=comp :axis_category %>
+    shadow:              low
+    size:                 12
+    alpha:                50
+    orientation:  horizontal
+    color:            000000
+
+  <%=comp :axis_ticks %>
+    value_ticks:     false
+    category_ticks:  false
+
+  <%=comp :axis_value %>
+    alpha:  0
+
+  <%=comp :chart_border %>
+    top_thickness:     0
+    bottom_thickness:  0
+    left_thickness:    0
+    right_thickness:   0
+
+  <%=comp :chart_grid_h %>
+    thickness:  0
+
+  <%=comp :chart_label %>
+    shadow:       low
+    alpha:        100
+    size:          10
+    color:     FFFFFF
+    position:    over
+
+  <%=comp :chart_pref %>
+    drag:      true
+    min_x:       20
+    max_x:       70
+    min_y:       30
+    max_y:       80
+    rotation_x:  30
+    rotation_y:  40
+
+  <%=comp :chart_rect %>
+    x:               -40
+    positive_alpha:    0
+    y:                30
+    height:          240
+    negative_alpha:   25
+    width:           480
+
+  <%=comp :chart_type %>
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       2
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       2
+
+  <%=comp :legend %>
+    shadow:               low
+    line_alpha:             0
+    size:                  12
+    alpha:                 50
+    x:                     50
+    fill_alpha:             0
+    y:                     35
+    margin:                 5
+    line_color:        000000
+    height:                40
+    fill_color:        000066
+    color:             000000
+    line_thickness:         0
+    width:                100
+    layout:          vertical
+
+  <%=comp :series_color %>
+    colors: 666666,768bb3
+
+  <%=comp :series %>
+    set_gap:  20
+    bar_gap:  10

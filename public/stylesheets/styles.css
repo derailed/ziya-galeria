@@ -1,0 +1,129 @@
+body {
+  background: #ffffff  url( '/images/app_bg.png' ) top left repeat-x;
+  margin:           0px;
+  padding:          0px;
+	color:            #C09439;
+  line-height:      18px;
+  font-family:      tahoma, arial, helvetica, sans-serif;
+  font-size:        11px;  
+}
+
+div#header {
+  overflow: none;
+}
+
+div#navigation {
+  margin-right: 40px;
+  text-align:  right;
+}
+
+div#logo {
+	background: transparent url( '/images/ziya_logo.png' ) top left repeat-none;
+	margin-left: 10px;
+	height:      100px;
+}
+
+div#footer {
+	font-size:     11pt;
+	color:         #636363;
+	text-align:    right;
+	margin-top:    10px;
+	margin-right:  50px;
+}
+
+span#co {
+	font-weight: bold;
+	color:       #434343;
+	font-style:  italic;
+}
+
+div#main {
+  text-align: center;
+  margin:     20px 50px 10px 50px;
+}
+
+div#workspace {
+  text-align: center;
+  float:left;
+  width:  100%;
+  height: 500px;    
+  border: 2px #b0c7a7 solid;
+/*  border: 2px #9d370f solid;*/
+/*  background: #fff;*/
+  background: #ffffff  url( '/images/app_bg.png' ) top left repeat-x;
+}
+
+div.charts {
+  clear:  both;
+  width:  850px;
+  height: 400px;
+/*  border: 1px green solid;*/
+  margin: 20px 0px 0px 10px;
+}
+
+div.chart {
+  float:  left;
+  margin: 10px;
+  width:  400px;
+  height: 300px;
+  border: 1px #949494 solid;
+}
+
+a.docs {
+  font-weight:    bold;
+  font-size:      14pt;
+  color:       #ff7733;
+}
+
+a.selected {
+  color: #ffffff;
+}
+
+a.nav:hover {
+  text-decoration: underline;
+}
+
+a.lines {
+  color: #0074ae;
+}
+a.lines.selected {
+  color:            #ffffff;
+  background-color: #0074ae;
+}
+
+a.columns {
+  color: #a839b2;
+}
+a.columns.selected {
+  color:            #ffffff;  
+  background-color: #a839b2;
+}
+
+a.stacked_columns {
+  color: #ff0071;
+}
+a.stacked_columns.selected {
+  color:            #ffffff;
+  background-color: #ff0071;
+}
+
+a.bubbles {
+  color: #58AA00;
+}
+a.bubbles.selected {
+  color:            #ffffff;
+  background-color: #58AA00;
+}
+
+a.manage {
+  color:           #acd030;
+  font-size:       14px;
+  margin-right:    10px;
+  padding-right:   5px;
+  border-right:    1px #afafaf solid;
+  text-decoration: none;
+}
+a.manage.selected {
+  color:            #ffffff;
+  background-color: #acd030;
+}

@@ -1,0 +1,132 @@
+<%= chart :column_threed %>
+
+  <%=comp :axis_category %>
+    shadow:               low
+    size:                  10
+    alpha:                 75
+    orientation:  diagonal_up
+    color:             FFFFFF
+
+  <%=comp :axis_ticks %>
+    value_ticks:     false
+    category_ticks:  false
+
+  <%=comp :axis_value %>
+    alpha:  0
+
+  <%=comp :chart_border %>
+    top_thickness:     0
+    bottom_thickness:  0
+    left_thickness:    0
+    right_thickness:   0
+
+  <%=comp :chart_grid_h %>
+    thickness:  0
+
+  <%=comp :chart_grid_v %>
+    thickness:  0
+
+  <%=comp :chart_label %>
+    background_color:  000000
+    alpha:                 80
+    size:                  12
+    color:             ff6600
+    position:          cursor
+
+  <%=comp :chart_pref %>
+    rotation_x:     20
+    rotation_y:     40
+    drag:        false
+
+  <%=comp :chart_rect %>
+    x:               -70
+    positive_alpha:    0
+    y:               -35
+    height:          250
+    width:           500
+
+  <%=comp :chart_transition %>
+    delay:              0
+    order:         series
+    type:      slide_left
+    duration:           1
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :rect %>
+          shadow:                  bg
+          line_alpha:               0
+          x:                        0
+          fill_alpha:             100
+          y:                        0
+          height:                 300
+          fill_color:          888888
+          line_thickness:           0
+          layer:           background
+          width:                  400
+          text:            '          '
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :bevel %>
+          blurY:                5
+          angle:               45
+          highlightAlpha:      10
+          type:             outer
+          id:               small
+          highlightColor:  ffffff
+          shadowAlpha:         25
+          blurX:                5
+          distance:             2
+      - <%= filter_type :shadow %>
+          inner:       true
+          blurY:        200
+          angle:        135
+          alpha:         20
+          id:            bg
+          color:     000000
+          quality:        2
+          distance:      50
+          blurX:        300
+      - <%= filter_type :shadow %>
+          blurY:       2
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       2
+
+  <%=comp :legend %>
+    line_alpha:               0
+    size:                    12
+    alpha:                  100
+    x:                       25
+    fill_alpha:              10
+    delay:                    0
+    y:                      250
+    margin:                  20
+    line_color:          000000
+    height:                  50
+    fill_color:          000000
+    color:               aaccff
+    bevel:                small
+    duration:                 1
+    line_thickness:           0
+    transition:        dissolve
+    width:                  350
+    layout:          horizontal
+
+  <%=comp :update %>
+    delay:  3
+    mode:   data
+    url:    <%= options[:url] %>
+
+  <%=comp :context_menu %>
+    full_screen:  false
+
+  <%=comp :series_color %>
+    colors: ff8800,88ff00
+
+  <%=comp :series %>
+    set_gap:  20
+    bar_gap:   0

@@ -1,0 +1,111 @@
+<%= chart :pie %>
+  <%=comp :chart_grid_h %>
+    alpha:          20
+    thickness:       1
+    type:        solid
+    color:      FFFFFF
+
+  <%=comp :chart_label %>
+    shadow:            low
+    as_percentage:    true
+    alpha:              95
+    size:               10
+    color:          ffffff
+    position:       inside
+
+  <%=comp :chart_pref %>
+    select:  true
+
+  <%=comp :chart_rect %>
+    positive_alpha:      75
+    positive_color:  4c5577
+    bevel:               bg
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:         low
+          alpha:            5
+          size:            30
+          x:                0
+          y:                0
+          color:       ffffff
+          height:         150
+          layer:   background
+          width:          400
+          text:    '|||||||||||||||||||||||||||||||||||||||||||||||'
+      - <%= drawing :text %>
+          shadow:          low
+          alpha:             5
+          size:             30
+          x:                 0
+          y:               140
+          color:        ffffff
+          height:          150
+          layer:    background
+          width:           400
+          v_align:      bottom
+          text:     '|||||||||||||||||||||||||||||||||||||||||||||||'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          color:       0
+          distance:    2
+          blurX:       5
+      - <%= filter_type :bevel %>
+          blurY:               10
+          angle:               45
+          highlightAlpha:       5
+          shadowColor:     000000
+          type:              full
+          id:                data
+          highlightColor:  ffffff
+          shadowAlpha:         50
+          blurX:               10
+          distance:             3
+      - <%= filter_type :bevel %>
+          blurY:               20
+          angle:               10
+          highlightAlpha:      25
+          shadowColor:     8888ff
+          type:              full
+          id:                  bg
+          highlightColor:  ff8888
+          shadowAlpha:         25
+          blurX:               20
+          distance:            10
+      - <%= filter_type :glow %>
+          blurY:      30
+          inner:   false
+          alpha:      75
+          id:      glow1
+          color:  ff88ff
+          blurX:      30
+
+  <%=comp :context_menu %>
+    full_screen:  false
+
+  <%=comp :legend %>
+    shadow:             low
+    line_alpha:           0
+    size:                12
+    alpha:               75
+    fill_alpha:           5
+    bullet:          circle
+    margin:              10
+    fill_color:           0
+    color:           eeffff
+    line_thickness:       0
+
+  <%=comp :series_color %>
+    colors: ddaa41,88dd11,4e62dd,ff8811,4d4d4d,5a4b6e
+
+  <%=comp :series_explode %>
+    numbers: 20,0,40,0,10

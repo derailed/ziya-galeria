@@ -1,0 +1,176 @@
+<%= chart :stacked_column %>
+
+  <%=comp :axis_value %>
+    shadow:        low
+    steps:           6
+    size:           10
+    alpha:          50
+    decimals:        0
+    color:      000000
+    show_min:     true
+
+  <%=comp :axis_category %>
+    shadow:  low
+
+  <%=comp :chart_border %>
+    top_thickness:          0
+    bottom_thickness:       3
+    left_thickness:         0
+    color:             000000
+    right_thickness:        0
+
+  <%=comp :chart_grid_h %>
+    alpha:          20
+    thickness:       1
+    type:        solid
+    color:      000000
+
+  <%=comp :chart_grid_v %>
+    alpha:          20
+    thickness:       1
+    type:       dashed
+    color:      000000
+
+  <%=comp :chart_label %>
+    prefix:                 $
+    background_color:  aaff00
+    size:                  12
+    alpha:                 75
+    color:             111122
+    position:          cursor
+    suffix:               Mil
+
+  <%=comp :chart_rect %>
+    shadow:              bg
+    x:                  125
+    positive_alpha:      90
+    y:                   65
+    height:             200
+    positive_color:  eeeeff
+    negative_color:  ff4400
+    negative_alpha:      75
+    width:              250
+
+  <%=comp :chart_transition %>
+    delay:          0
+    order:     series
+    type:        drop
+    duration:     1.5
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:         title
+          alpha:             25
+          rotation:         -90
+          size:              64
+          x:                  0
+          delay:              1
+          y:                330
+          color:         000033
+          height:            65
+          h_align:        right
+          duration:         0.5
+          transition:  slide_up
+          width:            330
+          v_align:       middle
+          text:        '  GROWTH'
+      - <%= drawing :text %>
+          shadow:           low
+          alpha:             50
+          rotation:         -90
+          size:              25
+          x:                 32
+          delay:            1.3
+          y:                303
+          color:         ffffff
+          height:            50
+          h_align:        right
+          duration:         0.7
+          transition:  slide_up
+          width:            300
+          v_align:       middle
+          text:        '  report'
+      - <%= drawing :image %>
+          alpha:                           80
+          x:                               93
+          delay:                          1.5
+          y:                               28
+          url:         charts/full_screen.swf
+          height:                          15
+          transition:                dissolve
+          width:                           20
+          text:        '                      '
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       10
+          inner:     true
+          angle:       10
+          alpha:       40
+          id:          bg
+          distance:     5
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:         8
+          inner:      true
+          angle:        45
+          alpha:       100
+          id:        title
+          knockout:   true
+          distance:      3
+          blurX:         8
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       40
+          alpha:       35
+          id:        data
+          distance:     3
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      35
+          id:        low
+          distance:    2
+          blurX:       5
+      - <%= filter_type :bevel %>
+          blurY:                5
+          angle:                2
+          highlightAlpha:      10
+          id:              bevel1
+          highlightColor:  ffffff
+          shadowAlpha:         50
+          blurX:               20
+          distance:            10
+
+  <%=comp :legend %>
+    shadow:                 low
+    line_alpha:               0
+    size:                    11
+    alpha:                   95
+    x:                      125
+    fill_alpha:              60
+    delay:                    1
+    y:                       25
+    margin:                   5
+    line_color:          000000
+    height:                  10
+    fill_color:          ffffff
+    color:               444466
+    duration:                 1
+    line_thickness:           0
+    transition:      slide_left
+    width:                  250
+    layout:          horizontal
+
+  <%=comp :link %>
+
+  <%=comp :series %>
+    set_gap:  35
+
+  <%=comp :series_color %>
+    colors: 4e627c,559922,cc9944

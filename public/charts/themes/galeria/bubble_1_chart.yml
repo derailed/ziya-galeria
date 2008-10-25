@@ -1,0 +1,157 @@
+<%= chart :bubble %>
+
+  <%=comp :axis_category %>
+    shadow:            low
+    size:               13
+    alpha:              75
+    max:              2000
+    orientation:  circular
+    min:                 0
+    color:          ffffff
+
+  <%=comp :axis_ticks %>
+    value_ticks:     false
+    category_ticks:  false
+
+  <%=comp :axis_value %>
+    shadow:    shadow2
+    alpha:          90
+    max:            60
+    min:             0
+    color:      ffffff
+    show_min:    false
+
+  <%=comp :chart_border %>
+    top_thickness:          1
+    bottom_thickness:       1
+    left_thickness:         1
+    color:             ffffff
+    right_thickness:        1
+
+  <%=comp :chart_grid_h %>
+    alpha:          50
+    thickness:       1
+    type:       dashed
+    color:      ffffff
+
+  <%=comp :chart_grid_v %>
+    alpha:          10
+    thickness:      20
+    type:        solid
+    color:      000000
+
+  <%=comp :chart_pref %>
+    point_size:          8
+    fill_shape:       true
+    point_shape:    circle
+    grid:         circular
+
+  <%=comp :chart_rect %>
+    corner_tr:           40
+    x:                  150
+    positive_alpha:      50
+    corner_bl:           40
+    y:                  100
+    corner_tl:           40
+    height:             150
+    positive_color:  ffffff
+    bevel:           bevel1
+    corner_br:           40
+    width:              220
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :image %>
+          x:                        0
+          y:                        0
+          url:     images/flower2.jpg
+          height:                 300
+          layer:           background
+          width:                  400
+          text:    '                  '
+      - <%= drawing :text %>
+          shadow:      low
+          alpha:        85
+          size:         30
+          x:           145
+          y:           257
+          color:    ffff44
+          height:      200
+          h_align:    left
+          width:       400
+          text:     'elevation'
+      - <%= drawing :text %>
+          shadow:       low
+          alpha:         85
+          size:          26
+          rotation:     -90
+          x:            107
+          y:            255
+          color:     ffff44
+          height:       200
+          h_align:     left
+          width:        400
+          text:      '  wind'
+      - <%= drawing :text %>
+          shadow:     high
+          alpha:        85
+          size:         70
+          x:           125
+          y:             9
+          color:    ffffff
+          height:      200
+          h_align:    left
+          width:       400
+          text:     'pollen'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       4
+          angle:      45
+          alpha:      75
+          id:        low
+          color:       0
+          distance:    2
+          blurX:       4
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       75
+          id:        high
+          color:        0
+          distance:     5
+          blurX:       10
+      - <%= filter_type :bevel %>
+          blurY:               10
+          angle:               45
+          highlightAlpha:      25
+          type:             outer
+          id:              bevel1
+          highlightColor:  ffffff
+          shadowAlpha:         35
+          blurX:               10
+          distance:             5
+
+  <%=comp :legend %>
+    shadow:                 low
+    line_alpha:              40
+    size:                    11
+    alpha:                   90
+    x:                      150
+    fill_alpha:              20
+    bullet:              circle
+    y:                       78
+    margin:                   5
+    line_color:          ffffff
+    height:                  20
+    fill_color:          0000ff
+    color:               ffffff
+    line_thickness:           1
+    width:                  220
+    layout:          horizontal
+
+  <%=comp :series_color %>
+    colors: 88ff00,ff6600

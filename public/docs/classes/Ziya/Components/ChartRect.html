@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Ziya::Components::ChartRect</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Ziya::Components::ChartRect</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/ziya/components/chart_rect_rb.html">
+                lib/ziya/components/chart_rect.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Base
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Sets the chart&#8216;s rectangle
+</p>
+<p>
+<tt>x</tt>: The horizontal position of the rectangle&#8216;s upper left
+corner relative to the upper
+</p>
+<pre>
+                          left corner of the canvas (0, 0).
+</pre>
+<p>
+<tt>y</tt>: The vertical position of the rectangle&#8216;s upper left
+corner relative to the upper
+</p>
+<pre>
+                          left corner of the canvas (0, 0).
+</pre>
+<p>
+<tt>width</tt>: The rectangle&#8216;s width. <tt>height</tt>: The
+rectangle&#8216;s height. <tt>positive_color</tt>: The chart&#8216;s
+background color above the zero line. This must be a string holding triple
+</p>
+<pre>
+                          hexadecimal values representing the red, green, and blue components for a color.
+                          The default is &quot;FFFFFF&quot; (white).
+</pre>
+<p>
+<tt>negative_color</tt>: The chart&#8216;s background color below the zero
+line. This must be a string holding triple
+</p>
+<pre>
+                          hexadecimal values representing the red, green, and blue components for a color.
+                          The default is &quot;000000&quot; (black).
+</pre>
+<p>
+<tt>positive_alpha</tt>: The transparency value of the background color
+above the zero line. Valid values are 0
+</p>
+<pre>
+                          (fully transparent) to 100 (fully opaque).
+                          The default is 75.
+</pre>
+<p>
+<tt>negative_alpha</tt>: The transparency value of the background color
+below the zero line. Valid values are 0
+</p>
+<pre>
+                          (fully transparent) to 100 (fully opaque).
+                          The default is 20.
+</pre>
+<p>
+See <a
+href="http://www.maani.us/xml_charts/index.php?menu=Reference&submenu=chart_rect">www.maani.us/xml_charts/index.php?menu=Reference&submenu=chart_rect</a>
+for additional documentation, examples and futher detail.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

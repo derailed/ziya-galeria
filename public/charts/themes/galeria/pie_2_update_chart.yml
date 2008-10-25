@@ -1,0 +1,5 @@
+<%=chart :pie_threed %>
+  <%=comp :update %>
+    delay:  3
+    mode:   data
+    url:    <%= options[:url] %>

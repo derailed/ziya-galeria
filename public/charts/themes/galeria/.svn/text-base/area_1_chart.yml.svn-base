@@ -1,0 +1,185 @@
+<%= chart :area %>
+
+  <%=comp :axis_category %>
+    shadow:              low
+    size:                 16
+    alpha:                65
+    margin:            false
+    orientation:  horizontal
+    color:            000000
+
+  <%=comp :axis_ticks %>
+    value_ticks:         false
+    minor_color:        222222
+    minor_count:             1
+    major_thickness:         2
+    major_color:        000000
+    position:         centered
+    category_ticks:       true
+    minor_thickness:         1
+
+  <%=comp :axis_value %>
+    shadow:       low
+    steps:          6
+    size:          10
+    alpha:         65
+    color:     ffffff
+    show_min:   false
+
+  <%=comp :chart_border %>
+    top_thickness:          1
+    bottom_thickness:       2
+    left_thickness:         0
+    color:             000000
+    right_thickness:        0
+
+  <%=comp :chart_grid_h %>
+    alpha:           8
+    thickness:      10
+    color:      ffffff
+
+  <%=comp :chart_guide %>
+    radius:                 5
+    background_color:  ffffff
+    alpha:                 30
+    line_alpha:            50
+    thickness:              1
+    text_h_alpha:          80
+    text_v_alpha:          80
+    horizontal:          true
+    vertical:            true
+    type:              dashed
+    suffix_h:            Mil 
+    line_thickness:         1
+    prefix_h:               $
+
+  <%=comp :chart_rect %>
+    shadow:            high
+    positive_alpha:      65
+    height:             125
+    positive_color:  ffffff
+    bevel:           bevel1
+
+  <%=comp :chart_transition %>
+    delay:               0
+    order:          series
+    type:      slide_right
+    duration:           .5
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :rect %>
+          x:                        0
+          y:                        0
+          height:                 300
+          fill_color:          666666
+          bevel:                   bg
+          line_thickness:           0
+          layer:           background
+          width:                  400
+          text:            '          '
+      - <%= drawing :text %>
+          shadow:  low
+          alpha:     5
+          size:     30
+          x:         0
+          y:       -10
+          height:  150
+          width:   400
+          text:    '|||||||||||||||||||||||||||||||||||||||||||||||'
+      - <%= drawing :circle %>
+          radius:                 170
+          line_alpha:              10
+          x:                      180
+          fill_alpha:               0
+          y:                      140
+          line_color:          000000
+          bevel:               bevel1
+          line_thickness:          60
+          layer:           background
+          text:            '          '
+      - <%= drawing :text %>
+          shadow:           low
+          alpha:             20
+          size:              85
+          x:                 -1
+          delay:              0
+          y:                219
+          color:         aaaaff
+          height:           150
+          duration:        1.25
+          transition:  slide_up
+          width:            400
+          text:        'GRO    TH'
+      - <%= drawing :text %>
+          shadow:          high
+          alpha:             50
+          size:             120
+          x:                -50
+          delay:              0
+          y:                187
+          color:         aaaaff
+          height:           150
+          duration:           1
+          transition:  slide_up
+          width:            400
+          text:        '       W'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :bevel %>
+          blurY:             200
+          angle:             -90
+          highlightAlpha:     15
+          type:            inner
+          id:                 bg
+          shadowAlpha:        15
+          blurX:               0
+          distance:           50
+      - <%= filter_type :bevel %>
+          blurY:               50
+          angle:               90
+          highlightAlpha:      90
+          shadowColor:     000000
+          type:             inner
+          id:              bevel1
+          highlightColor:  ddddff
+          shadowAlpha:         25
+          blurX:                0
+          distance:            20
+      - <%= filter_type :shadow %>
+          blurY:       15
+          angle:       45
+          alpha:       35
+          id:        high
+          distance:     5
+          blurX:       15
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      35
+          id:        low
+          distance:    2
+          blurX:       5
+
+  <%=comp :legend %>
+    shadow:                 low
+    line_alpha:               0
+    size:                    13
+    alpha:                   65
+    x:                       61
+    fill_alpha:              30
+    y:                       36
+    margin:                   5
+    line_color:          000000
+    height:                   5
+    fill_color:          aaaaaa
+    color:               ffffff
+    line_thickness:           0
+    width:                  299
+    layout:          horizontal
+
+  <%=comp :series_color %>
+    colors: 86ab71,4e627c,564546

@@ -1,0 +1,141 @@
+<%= chart :column %>
+
+  <%=comp :axis_category %>
+    shadow:     low
+    size:        11
+    alpha:       50
+    color:   000000
+    skip:         2
+
+  <%=comp :axis_ticks %>
+    value_ticks:        false
+    minor_color:       888888
+    minor_count:            3
+    major_thickness:        2
+    major_color:       000000
+    position:         outside
+    category_ticks:      true
+    minor_thickness:        1
+
+  <%=comp :axis_value %>
+    shadow:        low
+    steps:           4
+    size:           10
+    alpha:          50
+    decimals:        0
+    color:      000000
+    show_min:     true
+
+  <%=comp :chart_border %>
+    top_thickness:          1
+    bottom_thickness:       2
+    left_thickness:         0
+    color:             000000
+    right_thickness:        0
+
+  <%=comp :chart_grid_h %>
+    alpha:          10
+    thickness:      28
+    color:      0066FF
+
+  <%=comp :chart_grid_v %>
+    alpha:          10
+    thickness:       1
+    color:      0066FF
+
+  <%=comp :chart_guide %>
+    radius:                 3
+    background_color:  FF4400
+    alpha:                 35
+    line_alpha:             0
+    thickness:              1
+    fill_alpha:            75
+    text_h_alpha:          90
+    text_v_alpha:          90
+    horizontal:          true
+    vertical:            true
+    type:              dashed
+    suffix_h:             Mil
+    color:             000000
+    suffix_v:             May
+    prefix_h:               $
+
+  <%=comp :chart_rect %>
+    x:                   20
+    positive_alpha:      40
+    y:                   50
+    height:             220
+    positive_color:  FFFFFF
+    width:              370
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :image %>
+          shadow:                     bg
+          alpha:                     100
+          x:                           0
+          y:                           0
+          url:     images/note_paper.jpg
+          height:                    300
+          layer:              background
+          width:                     400
+          text:    '                     '
+      - <%= drawing :text %>
+          shadow:      high
+          alpha:         75
+          rotation:       2
+          size:          53
+          x:              5
+          y:              0
+          color:     ff6644
+          height:       400
+          h_align:   center
+          width:        400
+          text:      'monthly report'
+      - <%= drawing :text %>
+          shadow:    low
+          alpha:      60
+          size:       16
+          x:          25
+          y:          55
+          h_align:  left
+          width:     300
+          text:     'May 2008'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       50
+          id:        high
+          color:        0
+          distance:     3
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      35
+          id:        low
+          distance:    2
+          blurX:       5
+      - <%= filter_type :shadow %>
+          inner:       true
+          blurY:        150
+          angle:        135
+          alpha:         15
+          id:            bg
+          color:     000000
+          quality:        1
+          distance:      25
+          blurX:        200
+
+  <%=comp :legend %>
+    layout:  hide
+
+  <%=comp :series_color %>
+    colors: dd6b66,7e6cee
+
+  <%=comp :series %>
+    set_gap:  0
+    bar_gap:  0
