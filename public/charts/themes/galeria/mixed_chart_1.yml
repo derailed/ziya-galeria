@@ -1,0 +1,153 @@
+<%= chart :mixed %>
+
+  <%=comp :axis_category %>
+    shadow:   light
+    size:        11
+    alpha:       70
+    color:   000000
+
+  <%=comp :axis_value %>
+    shadow:      light
+    steps:           4
+    size:           10
+    alpha:          70
+    decimals:        0
+    color:      ffffff
+    show_min:     true
+
+  <%=comp :chart_border %>
+    top_thickness:          0
+    bottom_thickness:       2
+    left_thickness:         0
+    color:             000000
+    right_thickness:        0
+
+  <%=comp :chart_grid_h %>
+    alpha:          20
+    thickness:       1
+    type:       dashed
+    color:      ffffff
+
+  <%=comp :chart_label %>
+    alpha:         60
+    size:          11
+    color:     0000ff
+    position:   below
+
+  <%=comp :chart_pref %>
+    fill_shape:        true
+    point_shape:     circle
+    line_thickness:       2
+
+  <%=comp :chart_rect %>
+    x:                75
+    positive_alpha:    0
+    y:                50
+    height:          200
+    width:           300
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :rect %>
+          shadow:              bg
+          x:                    0
+          y:                    0
+          height:             300
+          fill_color:           0
+          layer:       background
+          width:              400
+          text:        '          '
+      - <%= drawing :text %>
+          shadow:           low
+          alpha:              7
+          rotation:          -5
+          size:             100
+          x:                 70
+          y:                 85
+          color:              0
+          height:           200
+          layer:     background
+          width:            300
+          text:      '        up'
+      - <%= drawing :text %>
+          shadow:       low
+          alpha:         10
+          rotation:     -90
+          size:          35
+          x:            -10
+          y:            300
+          color:     000000
+          height:       200
+          width:        300
+          text:      '|||||||||||||||||||||||||||||||||'
+      - <%= drawing :text %>
+          shadow:     high
+          alpha:        90
+          size:         65
+          x:            15
+          y:           -14
+          color:    eeffee
+          height:      200
+          h_align:  center
+          width:       400
+          text:     'net growth'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          color:       0
+          distance:    2
+          blurX:       5
+      - <%= filter_type :shadow %>
+          blurY:       15
+          angle:       45
+          alpha:       40
+          id:        high
+          color:        0
+          distance:     7
+          blurX:       15
+      - <%= filter_type :shadow %>
+          inner:       true
+          blurY:        200
+          angle:        135
+          alpha:         10
+          id:            bg
+          color:     000000
+          knockout:    true
+          quality:        1
+          distance:      50
+          blurX:        300
+      - <%= filter_type :bevel %>
+          blurY:                0
+          angle:                0
+          highlightAlpha:      15
+          type:             inner
+          id:              bevel1
+          highlightColor:  ffffff
+          shadowAlpha:         15
+          blurX:               10
+          distance:             5
+
+  <%=comp :legend %>
+    shadow:             low
+    line_alpha:           0
+    size:                11
+    alpha:               60
+    x:                   90
+    fill_alpha:           0
+    bullet:          circle
+    y:                   58
+    margin:               5
+    line_color:      000000
+    height:              40
+    fill_color:      000000
+    color:           000000
+    line_thickness:       0
+    width:              170
+
+  <%=comp :series_color %>
+    colors: ffee88,aaeedd,8888ee,ff6600

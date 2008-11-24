@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => "home"
 
-  charts = %w[line column bar pie bubble donut area polar scatter image_column]
+  charts = %w[line column bar pie bubble donut area polar scatter image_column mixed_chart]
   
   charts.each do |chart|
     map.send( "load_#{chart}s", "/#{chart}s/load_#{chart}s", 

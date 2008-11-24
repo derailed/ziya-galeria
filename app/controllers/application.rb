@@ -9,14 +9,12 @@ class ApplicationController < ActionController::Base
   
   helper :all # include all helpers, all the time
 
-  # See ActionController::RequestForgeryProtection for details
-  # Uncomment the :secret if you're not using the cookie session store
   protect_from_forgery # :secret => '32352c4b71dbc38d0f0fa6d0ad8a382c'
   
   # Your licenses
   LICENSE       = ""
   GAUGE_LICENSE = ""
-  
+
   # Setup chart title
   before_filter :setup_title
   
@@ -35,6 +33,7 @@ class ApplicationController < ActionController::Base
         "Area"             , :areas,
         "Polar"            , :polars,
         "Scatter"          , :scatters,
+        "Mixed"            , :mixed_charts,
         "Gauges"           , :gauges,
         "Pointers"         , :mixed
       )

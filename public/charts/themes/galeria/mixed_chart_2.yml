@@ -1,0 +1,229 @@
+<%= chart :mixed %>
+
+  <%=comp :axis_category %>
+    shadow:     low
+    size:         9
+    alpha:       70
+    color:   000000
+
+  <%=comp :axis_ticks %>
+    value_ticks:        false
+    minor_color:       888888
+    minor_count:            3
+    major_thickness:        2
+    major_color:       000000
+    position:         outside
+    category_ticks:      true
+    minor_thickness:        1
+
+  <%=comp :axis_value %>
+    shadow:        low
+    steps:           4
+    size:           10
+    alpha:          60
+    decimals:        0
+    color:      000000
+    show_min:     true
+
+  <%=comp :chart_border %>
+    top_thickness:          1
+    bottom_thickness:       2
+    left_thickness:         0
+    color:             000000
+    right_thickness:        0
+
+  <%=comp :chart_grid_h %>
+    alpha:          15
+    thickness:      10
+    color:      ffffff
+
+  <%=comp :chart_guide %>
+    radius:                 3
+    background_color:  ffffff
+    alpha:                 90
+    thickness:              1
+    fill_alpha:            90
+    text_h_alpha:          90
+    horizontal:          true
+    type:              dashed
+    color:             ffffff
+    fill_color:        FFFFFF
+    line_thickness:         0
+
+  <%=comp :chart_label %>
+    shadow:       low
+    alpha:         50
+    size:           9
+    color:     000000
+    position:  middle
+
+  <%=comp :chart_rect %>
+    x:                  125
+    positive_alpha:      50
+    y:                   75
+    height:             125
+    positive_color:  FFFFFF
+    width:              250
+
+  <%=comp :chart_transition %>
+    type:  dissolve
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :rect %>
+          shadow:              bg
+          x:                    0
+          y:                    0
+          height:             300
+          fill_color:           0
+          transition:    dissolve
+          layer:       background
+          width:              400
+          text:        '          '
+      - <%= drawing :text %>
+          shadow:            high
+          alpha:               15
+          size:               105
+          x:                  -40
+          y:                  -25
+          color:           eeffee
+          height:             200
+          transition:    dissolve
+          layer:       background
+          width:              450
+          text:        '     sales'
+      - <%= drawing :line %>
+          shadow:               inner
+          line_alpha:              90
+          y1:                     260
+          delay:                    0
+          x1:                     140
+          y2:                     260
+          x2:                     450
+          line_color:          ccff66
+          line_thickness:          54
+          transition:      slide_left
+          text:            '          '
+      - <%= drawing :line %>
+          shadow:                 low
+          line_alpha:              30
+          y1:                      80
+          x1:                     -50
+          y2:                      80
+          x2:                      60
+          line_color:          ccff66
+          line_thickness:          54
+          transition:        dissolve
+          layer:           background
+          text:            '          '
+      - <%= drawing :line %>
+          shadow:                 low
+          line_alpha:              45
+          y1:                     170
+          x1:                     -50
+          y2:                     170
+          x2:                      60
+          line_color:          ccff66
+          line_thickness:          54
+          transition:        dissolve
+          layer:           background
+          text:            '          '
+      - <%= drawing :line %>
+          shadow:                 low
+          line_alpha:              60
+          y1:                     260
+          x1:                     -50
+          y2:                     260
+          x2:                      60
+          line_color:          ccff66
+          line_thickness:          54
+          transition:        dissolve
+          layer:           background
+          text:            '          '
+      - <%= drawing :text %>
+          shadow:             low
+          alpha:               90
+          size:                53
+          x:                    0
+          delay:               .5
+          y:                    0
+          color:           ff6600
+          height:             290
+          h_align:          right
+          transition:  slide_left
+          width:              380
+          v_align:         bottom
+          text:        '      2007'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      25
+          id:        low
+          color:       0
+          distance:    2
+          blurX:       5
+      - <%= filter_type :shadow %>
+          blurY:       15
+          angle:       45
+          alpha:       40
+          id:        high
+          color:        0
+          distance:     7
+          blurX:       15
+      - <%= filter_type :shadow %>
+          inner:       true
+          blurY:          0
+          angle:          0
+          alpha:         20
+          id:            bg
+          color:     000000
+          knockout:    true
+          distance:      25
+          blurX:        200
+      - <%= filter_type :shadow %>
+          inner:       true
+          blurY:         10
+          angle:         45
+          alpha:         80
+          id:         inner
+          color:     000000
+          distance:       5
+          blurX:         10
+      - <%= filter_type :bevel %>
+          blurY:               75
+          angle:               45
+          highlightAlpha:      10
+          type:             inner
+          id:              bevel1
+          highlightColor:  ffffff
+          shadowAlpha:          5
+          knockout:          true
+          blurX:               75
+          distance:            25
+
+  <%=comp :legend %>
+    shadow:                 low
+    line_alpha:               0
+    size:                    12
+    alpha:                   90
+    x:                      125
+    fill_alpha:               0
+    y:                       50
+    margin:                   5
+    line_color:          000000
+    height:                  20
+    fill_color:          000000
+    color:               FFFFFF
+    line_thickness:           0
+    width:                  250
+    layout:          horizontal
+
+  <%=comp :series_color %>
+    colors: FF8844,7e6cee
+
+  <%=comp :series %>
+    set_gap:  35
+    bar_gap:   0
