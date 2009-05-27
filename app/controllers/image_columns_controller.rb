@@ -1,11 +1,7 @@
 class ImageColumnsController < ApplicationController
   
-  def index
-  end
-  
   def load_image_columns
     render :update do |page|
-      page.replace_html :chart_type, @title
       page.replace_html :workspace, :partial => "image_column"
     end
   end

@@ -9,11 +9,11 @@ body {
 }
 
 div#header {
+  height:   95px;
   overflow: none;
 }
 
 div#navigation {
-  margin-right: 40px;
   text-align:  right;
 }
 
@@ -24,11 +24,11 @@ div#logo {
 }
 
 div#footer {
-	font-size:     11pt;
-	color:         #636363;
-	text-align:    right;
-	margin-top:    10px;
-	margin-right:  50px;
+	font-size:      11pt;
+	letter-spacing: 10px;
+	color:          #636363;
+	text-align:     right;
+	margin-top:     10px;
 }
 
 span#co {

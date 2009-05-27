@@ -1,11 +1,7 @@
 class ColumnThreedsController < ApplicationController
   
-  def index
-  end
-  
   def load_column_threeds
     render :update do |page|
-      page.replace_html :chart_type, @title
       page.replace_html :workspace, :partial => "column_threed"
     end
   end

@@ -1,14 +1,14 @@
 <%= gauge :signal %>
   <%= dial :text, :signal %>
-      x:     20
-      y:     30
-      width: 40
-      size:  16 
+      x:     150
+      y:     130
+      width: 100
+      size:  30 
       align: center 
       color: <%= colorizer( options[:signal] ) %>
       text:  <%= options[:signal] %>
 
 # show current signal
-<%= signal_indicator( options[:x], options[:y], 20, 30, 10, 0, 360, 10, 20, "88ff00" ) %>
+<%= signal_indicator( options[:x], options[:y], 60, 30, 20, 0, 360, 10, 20, "88ff00" ) %>
 # shows delta from previous signal
 <%= delta_indicator( options[:x]+35, options[:y]-22 ) %>

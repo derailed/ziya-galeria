@@ -1,9 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => "home"
 
-  charts = %w[line column bar pie bubble donut area polar scatter image_column mixed_chart]
+  charts = %w[line column bar floating_bar pie bubble donut area polar scatter image_column mixed_chart composite map]
   
   charts.each do |chart|
+    next if chart == map
     map.send( "load_#{chart}s", "/#{chart}s/load_#{chart}s", 
      :controller => "#{chart}s", 
      :action     => "load_#{chart}s" )    
@@ -14,6 +15,22 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
 
+  # Maps
+  map.load_map_1 "/maps/load_map_1",
+   :controller => "maps",
+   :action     => "load_map_1"
+  map.load_map_2 "/maps/load_map_2",
+   :controller => "maps",
+   :action     => "load_map_2"
+   
+  # Composites
+  map.load_composite_pie "/composites/load_composite_pie",
+   :controller => "composites", 
+   :action     => "load_composite_pie"
+  map.load_composite_bar "/composites/load_composite_bar/:day",
+   :controller => "composites", 
+   :action     => "load_composite_bar"
+  
   # Pie 3D
   map.update_pie "/pies/update_pie_2", 
    :controller => "pies", 

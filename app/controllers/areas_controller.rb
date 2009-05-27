@@ -1,11 +1,7 @@
 class AreasController < ApplicationController
-  
-  def index
-  end
-  
+    
   def load_areas
     render :update do |page|
-      page.replace_html :chart_type, @title
       page.replace_html :workspace, :partial => "area"
     end
   end

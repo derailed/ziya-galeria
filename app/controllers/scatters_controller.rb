@@ -1,11 +1,7 @@
 class ScattersController < ApplicationController
-  
-  def index
-  end
-  
+    
   def load_scatters
     render :update do |page|
-      page.replace_html :chart_type, @title
       page.replace_html :workspace, :partial => "scatter"
     end
   end
@@ -13,11 +9,11 @@ class ScattersController < ApplicationController
   def load_scatter_1
     chart = Ziya::Charts::Scatter.new( LICENSE, "scatter_1_chart" )
     chart.add :axis_category_text, %w[x y]
-    chart.add :series, "veh 1", [ { :shadow => 'low', :value => 90 }, 500 ]
-    chart.add :series, "veh 2", [ { :shadow => 'low', :value => 105 }, 400 ]
-    chart.add :series, "veh 3", [ { :shadow => 'low', :label => '115, 600\r(best)', :value => 115 }, 600 ]
-    chart.add :series, "veh 4", [ { :shadow => 'low', :value => 85 }, 650 ]
-    chart.add :theme , "galeria"
+    chart.add :series            , "veh 1", [ { :shadow => 'low', :value => 90 }, 500 ]
+    chart.add :series            , "veh 2", [ { :shadow => 'low', :value => 105 }, 400 ]
+    chart.add :series            , "veh 3", [ { :shadow => 'low', :label => '115, 600\r(best)', :value => 115 }, 600 ]
+    chart.add :series            , "veh 4", [ { :shadow => 'low', :value => 85 }, 650 ]
+    chart.add :theme             , "galeria"
     
     respond_to do |fmt|
       fmt.xml { render :xml => chart.to_xml }

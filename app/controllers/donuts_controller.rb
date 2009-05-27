@@ -1,11 +1,7 @@
 class DonutsController < ApplicationController
   
-  def index
-  end
-  
   def load_donuts
     render :update do |page|
-      page.replace_html :chart_type, @title
       page.replace_html :workspace, :partial => "donut"
     end
   end

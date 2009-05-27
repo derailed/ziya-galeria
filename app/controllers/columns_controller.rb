@@ -1,11 +1,7 @@
 class ColumnsController < ApplicationController
-  
-  def index
-  end
-  
+    
   def load_columns
     render :update do |page|
-      page.replace_html :chart_type, @title
       page.replace_html :workspace, :partial => "column"
     end
   end

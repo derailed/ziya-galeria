@@ -1,0 +1,53 @@
+<%= chart :pie %>
+  <%=comp :chart_label %>
+    as_percentage:       1
+    size:                9
+    alpha:              90
+    color:          ffffff
+
+  <%=comp :chart_pref %>
+    rotation_x:     60
+    drag:        false
+
+  <%=comp :chart_rect %>
+    x:               100
+    positive_alpha:    0
+    y:               150
+    height:          130
+    width:           130
+
+  <%=comp :chart_transition %>
+    delay:          0.1
+    order:     category
+    type:      dissolve
+    duration:       0.3
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:           4
+          angle:          45
+          alpha:          35
+          id:        shadow1
+          color:           0
+          distance:        1
+          blurX:           4
+
+  <%=comp :legend %>
+    shadow:       shadow1
+    size:              11
+    alpha:             90
+    x:                 20
+    fill_alpha:         0
+    bullet:        circle
+    y:                150
+    height:            40
+    color:         ffffff
+    width:             20
+    layout:      vertical
+
+  <%=comp :series_color %>
+    colors: cc6600, cccc44, 7700ee, 666666, 4488cc
+
+  <%=comp :series_explode %>
+    numbers: 0, 50

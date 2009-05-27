@@ -1,0 +1,198 @@
+<%= chart :floating_bar %>
+
+  <%=comp :axis_category %>
+    shadow:     low
+    size:        11
+    alpha:       85
+    color:   ffffff
+
+  <%=comp :axis_ticks %>
+    value_ticks:          true
+    minor_color:        222222
+    minor_count:             0
+    major_thickness:         1
+    major_color:        222222
+    position:         centered
+    category_ticks:       true
+    minor_thickness:         0
+
+  <%=comp :axis_value %>
+    shadow:  low
+    steps:    12
+    size:      8
+    alpha:    60
+    max:     365
+    min:       0
+
+  <%=comp :chart_border %>
+    top_thickness:          0
+    bottom_thickness:       0
+    left_thickness:         0
+    color:             000088
+    right_thickness:        0
+
+  <%=comp :chart_grid_h %>
+    alpha:          20
+    thickness:       1
+    type:       dashed
+    color:      000000
+
+  <%=comp :chart_grid_v %>
+    alpha:         100
+    thickness:       1
+    color:      ee6666
+
+  <%=comp :chart_rect %>
+    corner_tr:           20
+    x:                  100
+    positive_alpha:      10
+    corner_bl:            0
+    y:                  100
+    corner_tl:            0
+    height:             150
+    positive_color:  000022
+    corner_br:           20
+    width:              275
+
+  <%=comp :chart_transition %>
+    delay:               0
+    order:             all
+    type:      slide_right
+    duration:            1
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :rect %>
+          x:                        0
+          delay:                    0
+          y:                        0
+          height:                 300
+          fill_color:          ee7777
+          bevel:                   bg
+          duration:                 1
+          line_thickness:           0
+          transition:        dissolve
+          layer:           background
+          width:                  400
+          text:            '          '
+      - <%= drawing :rect %>
+          shadow:                 high
+          x:                        25
+          fill_alpha:               20
+          delay:                     0
+          y:                       100
+          height:                  150
+          fill_color:           000022
+          duration:                0.5
+          line_thickness:            0
+          layer:            background
+          transition:      slide_right
+          width:                    75
+          text:            '           '
+      - <%= drawing :text %>
+          shadow:             low
+          alpha:                7
+          size:               100
+          rotation:           -10
+          x:                 -150
+          width:              500
+          delay:                0
+          y:                   15
+          color:           ffffff
+          duration:             1
+          layer:       background
+          transition:    dissolve
+          text:        '     Alpha'
+      - <%= drawing :text %>
+          shadow:             low
+          alpha:                7
+          size:               100
+          rotation:             1
+          x:                   35
+          delay:                0
+          y:                    0
+          color:           ffffff
+          duration:             1
+          layer:       background
+          transition:    dissolve
+          text:        '      Beta'
+      - <%= drawing :text %>
+          shadow:        high
+          alpha:          100
+          size:            36
+          x:                0
+          delay:            0
+          y:               65
+          color:       666688
+          height:         240
+          h_align:     center
+          duration:         2
+          transition:    drop
+          width:          400
+          text:        'production schedule'
+      <% options[:annotations].each do |annotation| %>
+      - <%= drawing :text %>
+          shadow:     low
+          transition: slide_right
+          delay:      0.5
+          color:      000000
+          alpha:      70
+          size:       9
+          x:          <%= annotation[:x] + 5 %>
+          y:          <%= 108 + annotation[:y_offset] %>
+          text:       <%= annotation[:label] %>
+      - <%= drawing :line %>
+          transition:  slide_right
+          delay:       0
+          duration:    0.5
+          x1:          <%= annotation[:x] %>
+          y1:          <%= 115 + annotation[:y_offset] %>
+          x2:          <%= annotation[:x] %>
+          y2:          250
+          line_color:  ffff00
+          line_alpha:  75
+      - <%= drawing :circle %>
+          transition:  slide_right
+          delay:       0
+          duration:    0.5
+          x:           <%= annotation[:x] %>
+          y:           <%= 115 + annotation[:y_offset] %>
+          radius:      4
+          fill_color:  ffff00
+          fill_alpha:  75
+          line_thickness: 0
+       <% end %>
+          
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :bevel %>
+          blurY:             200
+          angle:             180
+          highlightAlpha:     20
+          type:            inner
+          id:                 bg
+          shadowAlpha:        15
+          blurX:             200
+          distance:           50
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       30
+          id:        high
+          distance:     5
+          blurX:       10
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       5
+                    
+  <%=comp :series_color %>
+    colors: aa88ff,aaff88,aaff88,aa88ff,ffffff
+
+  <%=comp :series %>
+    set_gap:     50
+    transfer:  true
+    bar_gap:      0

@@ -18,3 +18,18 @@ function show_selection( tag_name, el )
 }
 
 
+// Refreshing the composite bar chart
+function refresh_composite_bar( category )
+{
+  new Ajax.Request( '/composites/refresh_composite_bar',
+  { asynchronous:true, 
+     evalScripts:true, 
+     parameters: { category: category, authenticity_token: window._token },
+     onComplete:function(request) { 
+       console.log( document.bar );
+       console.log( request.responseText );
+       document.bar.Update_XML( request.responseText, false, 'reset' );
+     }      
+  } );     
+}
+

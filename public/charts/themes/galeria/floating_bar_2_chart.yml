@@ -1,0 +1,129 @@
+<%= chart :floating_bar %>
+
+  <%=comp :axis_category %>
+    shadow:     low
+    size:        10
+    alpha:       90
+    color:   eebb66
+
+  <%=comp :axis_ticks %>
+    value_ticks:         false
+    minor_color:        222222
+    minor_count:             0
+    major_thickness:         1
+    major_color:        222222
+    position:         centered
+    category_ticks:       true
+    minor_thickness:         0
+
+  <%=comp :axis_value %>
+    shadow:     low
+    steps:       24
+    size:         8
+    alpha:       75
+    max:         24
+    min:          0
+    color:   ffffff
+
+  <%=comp :chart_border %>
+    top_thickness:     1
+    bottom_thickness:  1
+    left_thickness:    1
+    color:             0
+    right_thickness:   1
+
+  <%=comp :chart_grid_h %>
+    alpha:           5
+    thickness:      10
+    color:      000000
+
+  <%=comp :chart_grid_v %>
+    alpha:          20
+    thickness:       1
+    color:      000000
+
+  <%=comp :chart_label %>
+    shadow:       low
+    alpha:         85
+    size:          10
+    color:     ffffff
+    position:  inside
+
+  <%=comp :chart_rect %>
+    x:                   50
+    positive_alpha:      90
+    y:                   50
+    height:             200
+    positive_color:  ddd0ff
+    bevel:               bg
+    width:              325
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          alpha:    10
+          size:     40
+          x:         0
+          y:       -15
+          color:     0
+          height:  150
+          width:   500
+          text:    '|||||||||||||||||||||||||||||||||||||'
+      - <%= drawing :text %>
+          shadow:         low
+          alpha:          100
+          size:            36
+          x:               42
+          delay:            0
+          y:               15
+          color:       ee7777
+          height:         240
+          duration:         1
+          transition:    none
+          width:          350
+          text:        'Work Shifts'
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :bevel %>
+          blurY:             20
+          angle:            225
+          highlightAlpha:    20
+          type:            full
+          id:                bg
+          shadowAlpha:       15
+          blurX:             20
+          distance:           8
+      - <%= filter_type :bevel %>
+          blurY:                2
+          angle:               45
+          highlightAlpha:      25
+          shadowColor:     000000
+          type:             inner
+          id:               small
+          highlightColor:  ffffff
+          shadowAlpha:         35
+          blurX:                2
+          distance:             1
+      - <%= filter_type :shadow %>
+          blurY:       15
+          angle:       45
+          alpha:       35
+          id:        high
+          distance:     5
+          blurX:       15
+      - <%= filter_type :shadow %>
+          blurY:       5
+          angle:      45
+          alpha:      50
+          id:        low
+          distance:    2
+          blurX:       5
+
+  <%=comp :series_color %>
+    colors: 666666,aa6688,668866,668899,eebb66
+
+  <%=comp :series %>
+    set_gap:     20
+    transfer:  true
+    bar_gap:      0

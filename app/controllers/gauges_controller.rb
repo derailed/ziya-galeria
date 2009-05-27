@@ -1,11 +1,7 @@
 class GaugesController < ApplicationController
-
-  def index
-  end
   
   def load_gauges
     render :update do |page|
-      page.replace_html :chart_type, @title
       page.replace_html :workspace, :partial => "gauges"
     end
   end
@@ -32,8 +28,8 @@ class GaugesController < ApplicationController
   def load_signal
     signal  = [ 2.9, 1.3, 1.8, 3.5, 4, 5.7, 6.1, 7.3, 8.9, 9.2, 10.7 ]    
     options = { 
-        :x           => 120,
-        :y           => 100,
+        :x           => 200,
+        :y           => 150,
         :signal      => signal[rand( 11 )],
         :previous    => session[:previous] || 0,
         :goal        => nil,

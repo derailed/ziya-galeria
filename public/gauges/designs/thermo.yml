@@ -2,6 +2,20 @@
 # Thermometer design
 # -----------------------------------------------------------------------------  
 <%= gauge :thermo %>
+
+  # - :test: !ruby/object:Ziya::Gauges::Support::Link
+  #     components: !omap
+  #       - :area_1: !ruby/object:Ziya::Gauges::Support::Area
+  #           x: 10
+  #           y: 20
+  #           height: 200
+  #           width: 100
+  #       - :area_2: !ruby/object:Ziya::Gauges::Support::Area
+  #           x: 20
+  #           y: 30
+  #           height: 200
+  #           width: 100
+         
   # -----------------------------------------------------------------------------
   # Gauge Title  
   <%= dial :text, :gauge_title %>
@@ -9,7 +23,7 @@
       size:      75
       alpha:     10
       x:        <%= options[:x] - 150 %>
-      y:        <%= options[:y] + 270 %>
+      y:        <%= options[:y] + 240 %>
       color:    ffffff
       width:    300
       text:     <%= options[:title] %>
@@ -117,3 +131,19 @@
       
 <%= draw_celsius_scale( -10, 50 ) %>
 <%= draw_farenheit_scale( 20, 120 ) %>
+
+# 12
+  <%= dial :link, :link1 %>
+# 123456  
+      <%= dials %>
+# 12345678      
+        <%= dial :area, :area1 %>
+# 123456789012        
+            x:        10
+            y:        10
+            width:    100
+            height:   100
+            text: hello
+            background_color: 00ff00
+            alpha: 100
+            url:      javascript:doit()

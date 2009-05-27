@@ -4,6 +4,7 @@
   	<title>ZiYa Gem - G A L E R I A</title>
   	<%= stylesheet_link_tag 'styles' %>
   	<%= javascript_include_tag :defaults %>
+		<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>    
   </head>
   <body id="body">
   	<div id="header">
@@ -14,29 +15,26 @@
         <%= link_to "documentation", "/docs/index.html", :target => "#", :class => "docs" -%>
       </div>  	  	  
   	</div>
-    <div id="navigation" style="clear:left;">
-      <% count = 0; @charts.each_pair do |label, type| -%>
-         <%= link_to_remote label,
-            { :url      => self.send( "load_#{type}_url" ),
-              :before   => "show_selection('navigation', this);",
-              :complete => "" },
-              :id => type, :class => "nav manage #{type}#{count == 0 ? ' selected' : ''}" -%>
-      <% count += 1; end -%>
-    </div>
-  	<div id="main" style="clear:both">
-  	  <div id="title" style="display:none">
-    	  <h1 id="chart_type">lines</h1>
-    	</div>
+  	<div id="main" style="clear:both;">
+      <div id="navigation">
+        <% count = 0; @charts.each_pair do |label, type| -%>
+           <%= link_to_remote label,
+              { :url      => self.send( "load_#{type}_url" ),
+                :before   => "show_selection('navigation', this);",
+                :complete => "" },
+                :id => type, :class => "nav manage #{type}#{count == 0 ? ' selected' : ''}" -%>
+        <% count += 1; end -%>
+      </div>    	
   	  <div id="workspace">
   	    <center>
     	    <%= yield %>
     	  </center>
   	  </div>
-  	</div>
-  	<div id="footer">
-  	  <div id="production">
-  	    Produced by <span id="co">LiquidRail LLC</span>
-  	  </div>
+    	<div id="footer">
+    	  <div id="production">
+    	    produced by <span id="co">liquidrail llc</span>
+    	  </div>
+    	</div>  	  
   	</div>
   </body>
 </html>

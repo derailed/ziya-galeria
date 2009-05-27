@@ -1,11 +1,7 @@
 class BarsController < ApplicationController
-  
-  def index
-  end
-  
+    
   def load_bars
     render :update do |page|
-      page.replace_html :chart_type, @title
       page.replace_html :workspace, :partial => "bar"
     end
   end

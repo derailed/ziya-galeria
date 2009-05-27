@@ -1,0 +1,84 @@
+<%= chart :bar %>
+
+  <%=comp :axis_category %>
+    shadow:  low
+    size:      8
+    alpha:    50
+
+  <%=comp :axis_ticks %>
+    value_ticks:           1
+    minor_color:      555555
+    major_thickness:       1
+    major_color:      000000
+    category_ticks:        1
+    minor_thickness:       1
+
+  <%=comp :axis_value %>
+    shadow:     low
+    steps:        4
+    size:         9
+    alpha:       65
+    max:        100
+    color:   000000
+    suffix:       %
+
+  <%=comp :chart_border %>
+    top_thickness:          0
+    bottom_thickness:       0
+    left_thickness:         3
+    color:             000000
+    right_thickness:        0
+
+  <%=comp :chart_rect %>
+    x:                  250
+    positive_alpha:      40
+    y:                   50
+    height:             200
+    positive_color:  004488
+    width:              100
+
+  <%=comp :chart_type %>
+
+  <%=comp :draw %>
+    components:
+      - <%= drawing :text %>
+          shadow:    high
+          alpha:       35
+          size:        25
+          x:          245
+          y:           26
+          color:   004488
+          height:     150
+          width:      400
+          text:    <%= options[:day] %>
+
+  <%=comp :filter %>
+    filters:
+      - <%= filter_type :shadow %>
+          blurY:       4
+          angle:      45
+          alpha:      50
+          id:        low
+          color:       0
+          distance:    2
+          blurX:       4
+      - <%= filter_type :shadow %>
+          blurY:       10
+          angle:       45
+          alpha:       50
+          id:        high
+          color:        0
+          distance:     5
+          blurX:       10
+
+  <%=comp :context_menu %>
+    full_screen:  false
+
+  <%=comp :legend %>
+    layout:  hide
+
+  <%=comp :series_color %>
+    colors: ffff44
+
+  <%=comp :series %>
+    set_gap:  40

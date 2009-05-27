@@ -1,0 +1,21 @@
+<%= map :us%>
+  <%=config :default_color %>
+    color: 8296fa
+
+  <%=config :outline_color %>
+    color: 3c4574
+    
+  <%=config :background_color %>
+    color:   3c4574
+    opacity: 70
+    
+  <%=config :hover %>
+    font_size:        10
+    font_color:       434343
+    background_color: fcf8b8
+  
+  <%=config :state_info_icon %>
+    src:  /images/pin.swf
+  
+  <%=config :zoom_mode %>
+    data: default
