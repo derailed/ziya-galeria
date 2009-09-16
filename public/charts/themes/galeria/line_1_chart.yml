@@ -85,8 +85,6 @@
     type:      slide_left
     duration:         0.5
 
-  <%=comp :chart_type %>
-
   <%=comp :draw %>
     components:
       - <%= drawing :text %>

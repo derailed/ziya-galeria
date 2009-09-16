@@ -66,8 +66,6 @@
     type:      slide_right
     duration:           .5
 
-  <%=comp :chart_type %>
-
   <%=comp :draw %>
     components:
       - <%= drawing :rect %>

@@ -57,8 +57,6 @@
     negative_alpha:      25
     width:              320
 
-  <%=comp :chart_type %>
-
   <%=comp :draw %>
     components:
       - <%= drawing :text %>

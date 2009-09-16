@@ -23,8 +23,7 @@ Rails::Initializer.run do |config|
   # Specify gems that this application depends on. 
   # They can then be installed with "rake gems:install" on new installations.
   # You have to specify the :lib option for libraries, where the Gem name (sqlite3-ruby) differs from the file itself (sqlite3)
-  config.gem "ziya"       , :version => "~> 2.1.0"
-  config.gem "arrayfields", :version => "~> 4.6.0"
+  config.gem "arrayfields"  , :version => "~> 4.6.0"
 
   # Force all environments to use the same logger level
   # (by default production uses :info, the others :debug)

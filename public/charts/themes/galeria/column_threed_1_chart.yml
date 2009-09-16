@@ -47,8 +47,6 @@
     negative_alpha:   25
     width:           480
 
-  <%=comp :chart_type %>
-
   <%=comp :filter %>
     filters:
       - <%= filter_type :shadow %>

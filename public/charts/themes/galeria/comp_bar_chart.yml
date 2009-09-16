@@ -37,8 +37,6 @@
     positive_color:  004488
     width:              100
 
-  <%=comp :chart_type %>
-
   <%=comp :draw %>
     components:
       - <%= drawing :text %>

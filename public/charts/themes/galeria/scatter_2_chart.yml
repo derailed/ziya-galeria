@@ -74,8 +74,6 @@
     corner_br:            0
     width:              300
 
-  <%=comp :chart_type %>
-
   <%=comp :draw %>
     components:
       - <%= drawing :rect %>

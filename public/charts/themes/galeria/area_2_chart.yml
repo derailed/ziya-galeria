@@ -69,8 +69,6 @@
     corner_br:            0
     width:              320
 
-  <%=comp :chart_type %>
-
   <%=comp :chart_transition %>
     delay:            0
     order:          all

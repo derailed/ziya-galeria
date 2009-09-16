@@ -38,8 +38,6 @@
     delay:         1
     type:   dissolve
 
-  <%=comp :chart_type %>
-
   <%=comp :draw %>
     components:
       - <%= drawing :rect %>

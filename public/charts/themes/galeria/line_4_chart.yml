@@ -55,8 +55,6 @@
     height:           100
     bevel:             bg
 
-  <%=comp :chart_type %>
-
   <%=comp :filter %>
     filters:
       - <%= filter_type :shadow %>

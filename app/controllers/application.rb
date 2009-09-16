@@ -14,8 +14,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # :secret => '32352c4b71dbc38d0f0fa6d0ad8a382c'
   
   # Your licenses
-  LICENSE       = "JTAN82MSEQ9O.945CWK-2XOI1X0-7L"  
-  GAUGE_LICENSE = "GMW0.KO9D456TRCHGV-5ND6AIDY5BK"
+  LICENSE       = ""
+  GAUGE_LICENSE = ""
 
   # Setup chart title
   before_filter :setup_charts

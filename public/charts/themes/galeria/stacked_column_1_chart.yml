@@ -57,8 +57,6 @@
     type:        drop
     duration:     1.5
 
-  <%=comp :chart_type %>
-
   <%=comp :draw %>
     components:
       - <%= drawing :text %>

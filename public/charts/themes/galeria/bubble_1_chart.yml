@@ -59,8 +59,6 @@
     corner_br:           40
     width:              220
 
-  <%=comp :chart_type %>
-
   <%=comp :draw %>
     components:
       - <%= drawing :image %>

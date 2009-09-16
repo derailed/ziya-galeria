@@ -10,11 +10,12 @@
 
   <%=comp :chart_pref %>
     empty_center:  true
-    bevel:           bg
+    # bevel:           bg
     select:        true
 
-  <%=comp :chart_type %>
-
+  # <%=comp :series_color %>
+  #   colors: 88aaff,88dd11,4e62dd,ff8811,4d4d4d
+    
   <%=comp :draw %>
     components:
       - <%= drawing :circle %>
@@ -50,6 +51,17 @@
 
   <%=comp :filter %>
     filters:
+      - <%= filter_type :glow %>
+          id:        fred
+          blurX:       2
+          blurY:       2
+          strength:    16
+          quality:     1
+          alpha:       30
+          inner:       true
+          knockout:    true
+          color:       0000ff
+      
       - <%= filter_type :shadow %>
           blurY:       5
           angle:      45

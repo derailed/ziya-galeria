@@ -54,8 +54,6 @@
     rotation_x:  15
     rotation_y:   0
 
-  <%=comp :chart_type %>
-
   <%=comp :filter %>
     filters:
       - <%= filter_type :shadow %>

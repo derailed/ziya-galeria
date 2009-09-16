@@ -21,8 +21,6 @@
     positive_color:  4c5577
     bevel:               bg
 
-  <%=comp :chart_type %>
-
   <%=comp :draw %>
     components:
       - <%= drawing :text %>

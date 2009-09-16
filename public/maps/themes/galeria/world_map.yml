@@ -1,4 +1,4 @@
-<%= map :us%>
+<%= map :world%>
   <%=config :default_color %>
     color: 8296fa
 
